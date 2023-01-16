@@ -27,6 +27,8 @@ public class DialogueManager : MonoBehaviour
 
     private bool canContinueToNextLine = false;
 
+    private bool submitButtonPressedThisFrame = false;
+
     private Coroutine displayLineCoroutine;
 
     private static DialogueManager instance;
@@ -67,12 +69,18 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        {
+            submitButtonPressedThisFrame = true;
+        }
 
-        // handle continuing to the next line in dialogue when mouse is clicked
-       // if (currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-      //  {
-      //      ContinueStory();
-       // }
+        if (canContinueToNextLine
+            && submitButtonPressedThisFrame
+            && currentStory.currentChoices.Count == 0)
+        {
+            submitButtonPressedThisFrame = false;
+            ContinueStory();
+        }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -97,8 +105,7 @@ public class DialogueManager : MonoBehaviour
     }
     public void ContinueStory()
     {
-        if (currentStory.currentChoices.Count == 0 
-            && currentStory.canContinue)
+        if (currentStory.canContinue)
         {
             if (displayLineCoroutine != null)
             {
@@ -123,8 +130,9 @@ public class DialogueManager : MonoBehaviour
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
-            if (Input.GetKey(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            if (submitButtonPressedThisFrame)
             {
+                submitButtonPressedThisFrame = false;
                 speechText.text = line;
                 break;
             }
