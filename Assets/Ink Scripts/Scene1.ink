@@ -1,7 +1,8 @@
-INCLUDE globals.ink
+INCLUDE Scene2.ink
+
+VAR pokemon_name = ""
 
 { pokemon_name == "": -> main | -> already_chose }
-
 === main ===
 Which pokemon do you choose?
     + [Charmander]
@@ -9,7 +10,8 @@ Which pokemon do you choose?
     + [Bulbasaur]
         -> chosen("Bulbasaur")
     + [Squirtle]
-        -> chosen("Squirtle")
+        ~ pokemon_name = "Squirtle"
+        -> chosenAgain()
         
 === chosen(pokemon) ===
 ~ pokemon_name = pokemon
