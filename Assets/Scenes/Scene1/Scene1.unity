@@ -1790,6 +1790,7 @@ MonoBehaviour:
   - {fileID: 1521470636}
   - {fileID: 675059027}
   - {fileID: 301191780}
+  loadGlobalsJSON: {fileID: 4900000, guid: b04ea571663e324448e82d36ed8c175b, type: 3}
 --- !u!4 &881333729
 Transform:
   m_ObjectHideFlags: 0

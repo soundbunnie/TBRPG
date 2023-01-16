@@ -1,1 +1,1 @@
-VAR test_variable = ""
+VAR pokemon_name = ""
