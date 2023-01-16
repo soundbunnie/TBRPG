@@ -1,6 +1,6 @@
 INCLUDE Scene2.ink
+INCLUDE globals.ink
 
-VAR pokemon_name = ""
 
 { pokemon_name == "": -> main | -> already_chose }
 === main ===

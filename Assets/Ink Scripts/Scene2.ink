@@ -1,5 +1,5 @@
-INCLUDE globals.ink
+INCLUDE Scene3.ink
 
 === chosenAgain ===
 {pokemon_name == "": ... | {pokemon_name}! }
--> END
+-> Scene3
