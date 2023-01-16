@@ -1,7 +1,7 @@
 -> main
 
 === main ===
-This is the first line. Next, you'll make a choice.
+This is the first line. Next, you'll make a <color=\#F8FF30>choice</color>.
 Choose a thing.
     + [Thing 1]
         -> chosen1("Thing 1")

@@ -120,6 +120,8 @@ public class DialogueManager : MonoBehaviour
         canContinueToNextLine = false;
         HideChoices();
 
+        bool isAddingRichTextTag = false;
+
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
@@ -128,8 +130,24 @@ public class DialogueManager : MonoBehaviour
                 speechText.text = line;
                 break;
             }
-            speechText.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
+
+            // check for rich text tag, if found, add it without waiting
+            if (letter == '<' || isAddingRichTextTag)
+            {
+                isAddingRichTextTag = true;
+                speechText.text += letter;
+                if (letter == '>')
+                {
+                    isAddingRichTextTag = false;
+                }
+            }
+
+            else
+            {
+                speechText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+
         }
         // display choices, if any, for this dialogue line
         DisplayChoices();
