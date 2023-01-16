@@ -27,8 +27,6 @@ public class DialogueManager : MonoBehaviour
 
     private bool canContinueToNextLine = false;
 
-    private bool submitButtonPressedThisFrame = false;
-
     private Coroutine displayLineCoroutine;
 
     private static DialogueManager instance;
@@ -69,16 +67,11 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
-        {
-            submitButtonPressedThisFrame = true;
-        }
 
         if (canContinueToNextLine
-            && submitButtonPressedThisFrame
+            && InputManager.GetInstance().GetSubmitPressed()
             && currentStory.currentChoices.Count == 0)
         {
-            submitButtonPressedThisFrame = false;
             ContinueStory();
         }
     }
@@ -130,9 +123,8 @@ public class DialogueManager : MonoBehaviour
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
-            if (submitButtonPressedThisFrame)
+            if (InputManager.GetInstance().GetSubmitPressed())
             {
-                submitButtonPressedThisFrame = false;
                 speechText.text = line;
                 break;
             }
@@ -183,6 +175,7 @@ public class DialogueManager : MonoBehaviour
         if (canContinueToNextLine)
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
+            InputManager.GetInstance().RegisterSubmitPressed();
             ContinueStory();
         }
     }

@@ -1,0 +1,45 @@
+{
+    "name": "Controls",
+    "maps": [
+        {
+            "name": "game",
+            "id": "4784bb90-dde2-419d-aaa1-addf7045a06c",
+            "actions": [
+                {
+                    "name": "submit",
+                    "type": "Button",
+                    "id": "af8d30d6-f904-4dba-aa61-0ac697d5900e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5b8464a5-28bf-4280-936a-8f0fdfb187fa",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f662438-2ce7-482e-99a6-4a937bb3e2cb",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
