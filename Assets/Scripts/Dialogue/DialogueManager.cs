@@ -8,6 +8,9 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Params")]
+    [SerializeField] private float typingSpeed = 0.04f;
+
     [Header("Dialogue UI")]
 
     [SerializeField] private GameObject speechPanel;
@@ -21,6 +24,10 @@ public class DialogueManager : MonoBehaviour
     private Story currentStory;
 
     private bool dialogueIsPlaying;
+
+    private bool canContinueToNextLine = false;
+
+    private Coroutine displayLineCoroutine;
 
     private static DialogueManager instance;
 
@@ -81,18 +88,52 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
     }
 
+    public void TextAdvance()
+    {
+        if (canContinueToNextLine)
+        {
+            ContinueStory();
+        }
+    }
     public void ContinueStory()
     {
-        if (currentStory.currentChoices.Count == 0 && currentStory.canContinue)
+        if (currentStory.currentChoices.Count == 0 
+            && currentStory.canContinue)
         {
-            speechText.text = currentStory.Continue();
-            // display choices, if any, for this dialogue line
-            DisplayChoices();
+            if (displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+            }
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
         }
         else
         {
             Debug.LogWarning("No more lines");
         }
+    }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        // empty the speech text
+        speechText.text = "";
+
+        canContinueToNextLine = false;
+        HideChoices();
+
+        // display each letter one at a time
+        foreach (char letter in line.ToCharArray())
+        {
+            if (Input.GetKey(KeyCode.Space) || Input.GetMouseButtonDown(0))
+            {
+                speechText.text = line;
+                break;
+            }
+            speechText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        // display choices, if any, for this dialogue line
+        DisplayChoices();
+        canContinueToNextLine = true;
     }
 
     private void DisplayChoices()
@@ -121,9 +162,20 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    private void HideChoices()
+    {
+        foreach (GameObject choiceButton in choices)
+        {
+            choiceButton.SetActive(false);
+        }
+    }
+
     public void MakeChoice(int choiceIndex)
     {
-        currentStory.ChooseChoiceIndex(choiceIndex);
-        ContinueStory();
+        if (canContinueToNextLine)
+        {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+            ContinueStory();
+        }
     }
 }
