@@ -44,7 +44,7 @@ public static class MenuManager
                 gameMenu.SetActive(true);
                 break;
             case Menu.LOCATION_MENU:
-                gameMenu.SetActive(true);
+                locationMenu.SetActive(true);
                 break;
             case Menu.SETTINGS_MENU:
                 settingsMenu.SetActive(true);
