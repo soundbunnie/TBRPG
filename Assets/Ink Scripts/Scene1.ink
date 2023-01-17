@@ -15,4 +15,13 @@ Which pokemon do you choose?
     + [Squirtle]
         ~ pokemon_name = "Squirtle"
         -> chosen()
+    + [Charmander, who evolves into Charmeleon at level 16 and Charizard at 36.]
+        ~ pokemon_name = "Charmander"
+        -> chosen()
+    + [Bulbasaur]
+        ~ pokemon_name = "Bulbasaur"
+        -> chosen()
+    + [Squirtle]
+        ~ pokemon_name = "Squirtle"
+        -> chosen()
         
