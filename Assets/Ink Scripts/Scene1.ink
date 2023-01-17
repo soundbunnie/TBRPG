@@ -6,7 +6,7 @@ INCLUDE globals.ink
 === main ===
 This first line is going to be really really long, probably. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
 Which pokemon do you choose?
-    + [Charmander, who evolves into Charmeleon at level 16 and Charizard at 36.]
+    + [Charmander, who evolves into Charmeleon at level 16 and Charizard at 36. FILLER TEXTFILLER TEXTFILLER TEXTFILLER TEXTFILLER TEXTFILLER]
         ~ pokemon_name = "Charmander"
         -> chosen()
     + [Bulbasaur]
