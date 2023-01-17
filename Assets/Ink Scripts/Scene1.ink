@@ -2,22 +2,17 @@ INCLUDE Scene2.ink
 INCLUDE globals.ink
 
 
-{ pokemon_name == "": -> main | -> already_chose }
+{ pokemon_name == "": -> main}
 === main ===
+This first line is going to be really really long, probably. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
 Which pokemon do you choose?
-    + [Charmander]
-        -> chosen("Charmander")
+    + [Charmander, who evolves into Charmeleon at level 16 and Charizard at 36.]
+        ~ pokemon_name = "Charmander"
+        -> chosen()
     + [Bulbasaur]
-        -> chosen("Bulbasaur")
+        ~ pokemon_name = "Bulbasaur"
+        -> chosen()
     + [Squirtle]
         ~ pokemon_name = "Squirtle"
-        -> chosenAgain()
+        -> chosen()
         
-=== chosen(pokemon) ===
-~ pokemon_name = pokemon
-You chose {pokemon}!
--> END
-
-=== already_chose ===
-You already chose {pokemon_name}!
--> END

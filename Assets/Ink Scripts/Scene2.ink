@@ -1,5 +1,5 @@
 INCLUDE Scene3.ink
 
-=== chosenAgain ===
+=== chosen ===
 {pokemon_name == "": ... | {pokemon_name}! }
 -> Scene3
