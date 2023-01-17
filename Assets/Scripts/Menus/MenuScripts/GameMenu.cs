@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GameMenu : MonoBehaviour
 {
+    public void OnClick_Location()
+    {
+        MenuManager.OpenMenu(Menu.LOCATION_MENU, gameObject);
+    }
     public void OnClick_Settings()
     {
         MenuManager.OpenMenu(Menu.SETTINGS_MENU, gameObject);
