@@ -5,7 +5,7 @@ INCLUDE globals.ink
 After some exposition, or dialogue, or something, it's time to decide who you are.
     + [I am a Warrior. I'll come home with my shield or on it.]
         -> warrior_choose_traits
-    + [I am an alchemist. Most will call me a witch, but my potions and alchemical brews are simply the results of many years of study in my field]
+    + [I am an alchemist. Most will call me a witch, but my brews are simply the results of many years of study in my field.]
         -> alchemist_choose_traits
     + [I am a thief. My slick words and sitcky fingers get me in and out of trouble.]
         -> thief_choose_traits
@@ -13,7 +13,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
 === warrior_choose_traits ===
     ~ player_class = "Warrior"
     What do you fight for, {player_class}?
-    + [I fight for myself. The thrill of an honourable fight keeps my sane.]
+    + [I fight for myself. The thrill of an honourable fight keeps me sane.]
         -> next_scene_placeholder
     + [I fight for power and status. Being able to step on the backs of others to get to the top means that I was stronger.]
         -> next_scene_placeholder
