@@ -28,6 +28,8 @@ public class DialogueManager : MonoBehaviour
 
     private bool dialogueIsPlaying;
 
+    private bool textAdvancePressed;
+
     private bool canContinueToNextLine = false;
 
     private Coroutine displayLineCoroutine;
@@ -75,12 +77,12 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (canContinueToNextLine
-            && InputManager.GetInstance().GetSubmitPressed()
-            && currentStory.currentChoices.Count == 0)
-        {
-            ContinueStory();
-        }
+        //if (canContinueToNextLine
+            //&& InputManager.GetInstance().GetSubmitPressed()
+            //&& currentStory.currentChoices.Count == 0)
+        //{
+           // ContinueStory();
+       // }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
@@ -102,7 +104,9 @@ public class DialogueManager : MonoBehaviour
 
     public void TextAdvance()
     {
-        if (canContinueToNextLine)
+        textAdvancePressed = true;
+        if (canContinueToNextLine
+            && currentStory.currentChoices.Count == 0)
         {
             ContinueStory();
         }
@@ -115,12 +119,14 @@ public class DialogueManager : MonoBehaviour
             {
                 StopCoroutine(displayLineCoroutine);
             }
+            textAdvancePressed = false;
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
         }
         else
         {
             Debug.LogWarning("No more lines");
         }
+        textAdvancePressed = false;
     }
 
     private IEnumerator DisplayLine(string line)
@@ -136,9 +142,11 @@ public class DialogueManager : MonoBehaviour
         // display each letter one at a time
         foreach (char letter in line.ToCharArray())
         {
-            if (InputManager.GetInstance().GetSubmitPressed())
+            
+            if (textAdvancePressed)//if (InputManager.GetInstance().GetSubmitPressed())
             {
                 speechText.text = line;
+                textAdvancePressed = false;
                 break;
             }
 

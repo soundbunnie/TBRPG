@@ -2,6 +2,7 @@ INCLUDE globals.ink
 -> choose_class
 
 === choose_class ===
+This is a first line of text to test something.
 After some exposition, or dialogue, or something, it's time to decide who you are.
     + [I am a Warrior. I'll come home with my shield or on it.]
         -> warrior_choose_traits
