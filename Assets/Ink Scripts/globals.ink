@@ -16,7 +16,7 @@ LIST Proficiencies = Swords, Spears, Shields, Daggers, Axes, Hammers, Unarmed, I
 
 LIST Traits = Moral, Immoral, Cunning, Honourable, Kleptomaniac, Survivor, Outcast, Noble, Merchant, Irritable, Cheery, Gloomy, Generous, Revered, Chaotic
 
-LIST Goals = Fight, Merchant, Enlightenment
+LIST Goals = Battle, Merchant, Knowledge, Chaos, Betterment, Kleptomaniac, Contentment
 
 /* 
 PLAYER STATS
