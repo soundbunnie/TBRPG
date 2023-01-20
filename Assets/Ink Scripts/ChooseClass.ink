@@ -163,19 +163,25 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     
     What drove you to this life?
     + [I'll do anything it takes to survive. Morality is a luxury only few can have. What matters most to me is that I make it to the next day.]
+    // + Survivor, Willpower
         {add_trait(Survivor)}
+        ~ Willpower += 1
         ~ player_title = "Survivor"
         -> choose_background
     + [I'm a kleptomaniac. I love having things, especially *shiny* things, and I just can't seem to keep my hands to myself.]
+    // + Kleptomaniac, Immoral
         {add_trait(Kleptomaniac)}
         {add_trait(Immoral)}
         ~ player_title = "Kleptomaniac"
         -> choose_background
     + [I love chaos. I want to see the world burn and I'll go out of my way to rattle the cage.]
+    // + Chaotic
         {add_trait(Chaotic)}
         ~ player_title = "Agent of Chaos"
         -> choose_background
     + [I hate the rich. So long as I exist, so too will class disparity, and the only way to rise above your station is to take every advantage you can.]
+    // + Moral, Empathy
+        ~ Empathy += 1
         {add_trait(Moral)}
         ~ player_title = "\"Activist\""
         -> choose_background
