@@ -15,7 +15,7 @@ public class CharacterMenu : MonoBehaviour
         MenuManager.OpenMenu(Menu.GAME_MENU, gameObject);
     }
 
-    private void Start()
+    private void Update()
     {
         var skills = ((Ink.Runtime.ListValue)DialogueManager
             .GetInstance()
