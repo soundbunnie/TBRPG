@@ -17,6 +17,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     {add_skill(Lifting)}
     {add_skill(Running)}
     {add_skill(Intimidation)}
+    {add_trait(Revered)}
     What do you fight for?
     + [I fight for myself. The thrill of an honourable fight keeps me sane.]
         -> next_scene_placeholder
