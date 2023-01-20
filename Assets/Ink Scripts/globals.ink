@@ -24,6 +24,7 @@ MIN 1 MAX 5
 */
 
 // Physical stats
+VAR Health = (20)
 VAR Strength = (1)
 VAR Stealth = (1)
 
