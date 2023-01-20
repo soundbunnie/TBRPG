@@ -6,6 +6,8 @@ PLAYER VARIABLES
 
 VAR player_class = ""
 
+VAR player_name = ""
+
 VAR player_title = ""
 
 LIST Skills = Acrobatics, Theft, Lockpicking, Forgery, Lying, Charm, Lifting, Running, Alchemy, Cultures, Reading, Writing, Trading, Force, Negotiation
@@ -18,22 +20,23 @@ LIST Goals = Fight, Merchant, Enlightenment
 
 /* 
 PLAYER STATS
+MIN 1 MAX 5
 */
 
 // Physical stats
-VAR Strength = 0
-VAR Stealth = 0
+VAR Strength = 1
+VAR Stealth = 1
 
 // Mental stats
-VAR Influence = 0
-VAR Empathy = 0
-VAR Logic = 0
-VAR Willpower = 0
-VAR Introspection = 0
+VAR Influence = 1
+VAR Empathy = 1
+VAR Logic = 1
+VAR Willpower = 1
+VAR Introspection = 1
 
 // Passive stats
-VAR Perception = 0
-VAR History = 0
+VAR Perception = 1
+VAR History = 1
 
 
 /* 
