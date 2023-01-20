@@ -17,6 +17,19 @@ LIST Traits = Moral, Immoral, Cunning, Honourable, Kleptomaniac, Survivor, Outca
 LIST Goals = Fight, Merchant, Enlightenment
 
 /* 
+PLAYER STATS
+*/
+
+VAR Perception = 0
+VAR Hiding = 0
+VAR Empathy = 0
+VAR History = 0
+VAR Logic = 0
+VAR Willpower = 0
+VAR Introspection = 0
+
+
+/* 
 PLAYER FUNCTIONS
 */
 
