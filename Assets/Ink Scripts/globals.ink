@@ -10,7 +10,7 @@ LIST Skills = Acrobatics, Stealth, Theft, Lockpicking, Forgery, Persuasion, Inti
 
 LIST Proficiencies = Swords, Spears, Shields, Daggers, Axes, Hammers, Unarmed, Instruments
 
-LIST Traits = Moral, Immoral, Cunning, Honourable, Kleptomaniac, Survivor, Outcast, Noble, Merchant, Irritable, Cheery, Gloomy, Generous
+LIST Traits = Moral, Immoral, Cunning, Honourable, Kleptomaniac, Survivor, Outcast, Noble, Merchant, Irritable, Cheery, Gloomy, Generous, Revered
 
 /* 
 PLAYER FUNCTIONS

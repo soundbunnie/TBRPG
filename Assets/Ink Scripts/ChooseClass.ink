@@ -41,13 +41,22 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
 
 === alchemist_choose_traits ===
     ~ player_class = "Alchemist"
+    {add_skill(Alchemy)}
+    {add_skill(Writing)}
+    {add_skill(Reading)}
+    {add_skill(Knowledge)}
+    {add_trait(Outcast)}
     What do you hope to find in alchemy?
     + [I want to become a merchant. My brews are of the finest quality, and once I make enough connections in the merchant world, I'll finally sell them for what they're worth.]
         -> next_scene_placeholder
+        {add_skill(Trading)}
     + [I'm a scholar. I find beauty in the brews I concoct and want to know everything there is to know about my field.]
         -> next_scene_placeholder
+        {add_skill(Cultures)}
     + [I'm an alchemist solely for survival. I'm not very quick or strong, but my knowledge of alchemy lets me live to see the next day.]
         -> next_scene_placeholder
+        {add_skill(Survivor)}
+        {add_skill(Negotiation)}
     + [(BACK)]
         -> choose_class
 
