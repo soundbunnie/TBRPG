@@ -58,10 +58,11 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
         ~ player_title = "Chivalrous Warrior"
         -> choose_background
     + [I'm a mercenary. I know how to handle myself and I'm well paid, so long as I survive to the next day.]
-    // + Negotiation, Cunning, Introspection
+    // + Negotiation, Cunning, Introspection, Perception
         {add_skill(Negotiation)}
         {add_trait(Cunning)}
         ~ Introspection += 1
+        ~ Perception += 1
         ~ player_title = "Mercenary"
         -> choose_background
     + [(BACK)]
@@ -89,31 +90,38 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     
     // Physical stats
     ~ Strength = 1
-    ~ Stealth = 1
+    ~ Stealth = 2
     
     // Mental stats
     ~ Influence = 1
-    ~ Empathy = 1
-    ~ Logic = 1
-    ~ Willpower = 1
-    ~ Introspection = 1
+    ~ Empathy = 3
+    ~ Logic = 3
+    ~ Willpower = 2
+    ~ Introspection = 2
     
     // Passive stats
-    ~ Perception = 1
-    ~ History = 1
+    ~ Perception = 2
+    ~ History = 3
     
     What do you hope to find in alchemy?
     + [I want to become a merchant. My brews are of the finest quality, and once I make enough connections in the merchant world, I'll finally sell them for what they're worth.]
+    // + Trading, +2 Influence
         {add_skill(Trading)}
+        {add_skill(Negotiation)}
+        ~ Influence += 2
         ~ player_title = "Potion Seller"
         -> choose_background
     + [I'm a scholar. I find beauty in the brews I concoct and want to know everything there is to know about my field.]
+    // + Cultures, History
         {add_skill(Cultures)}
+        ~ History += 1
         ~ player_title = "Scholar"
         -> choose_background
     + [I'm an alchemist solely for survival. I'm not very quick or strong, but my knowledge of alchemy lets me live to see the next day.]
+    // + Survivor, Negotation, Introspection
         {add_trait(Survivor)}
         {add_skill(Negotiation)}
+        ~ Introspection += 1
         ~ player_title = "Survivor"
         -> choose_background
     + [(BACK)]
