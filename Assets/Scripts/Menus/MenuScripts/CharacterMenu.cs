@@ -23,6 +23,7 @@ public class CharacterMenu : MonoBehaviour
         var player_class = ((Ink.Runtime.StringValue)DialogueManager
             .GetInstance()
             .GetVariableState("player_class")).value;
+
         SkillsList.text = skills.ToString();
     }
 }

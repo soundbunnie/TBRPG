@@ -57,7 +57,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
         {add_skill(Cultures)}
         -> next_scene_placeholder
     + [I'm an alchemist solely for survival. I'm not very quick or strong, but my knowledge of alchemy lets me live to see the next day.]
-        {add_skill(Survivor)}
+        {add_trait(Survivor)}
         {add_skill(Negotiation)}
         -> next_scene_placeholder
     + [(BACK)]
