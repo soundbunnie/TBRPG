@@ -61,7 +61,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     // + Negotiation, Cunning, Introspection, Perception
         {add_skill(Negotiation)}
         {add_trait(Cunning)}
-        ~ Introspection += 1
+        ~ Willpower += 1
         ~ Perception += 1
         ~ player_title = "Mercenary"
         -> choose_background
@@ -121,7 +121,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     // + Survivor, Negotation, Introspection
         {add_trait(Survivor)}
         {add_skill(Negotiation)}
-        ~ Introspection += 1
+        ~ Willpower += 1
         ~ player_title = "Survivor"
         -> choose_background
     + [(BACK)]
@@ -147,18 +147,18 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     {add_skill(Lockpicking)}
     
     // Physical stats
-    ~ Strength = 1
-    ~ Stealth = 1
+    ~ Strength = 2
+    ~ Stealth = 3
     
     // Mental stats
-    ~ Influence = 1
-    ~ Empathy = 1
-    ~ Logic = 1
-    ~ Willpower = 1
+    ~ Influence = 3
+    ~ Empathy = 3
+    ~ Logic = 2
+    ~ Willpower = 2
     ~ Introspection = 1
     
     // Passive stats
-    ~ Perception = 1
+    ~ Perception = 3
     ~ History = 1
     
     What drove you to this life?
