@@ -13,19 +13,28 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
 === warrior_choose_traits ===
     ~ player_class = "Warrior"
     {add_skill(Strength)}
+    {add_skill(Force)}
     {add_skill(Lifting)}
     {add_skill(Running)}
+    {add_skill(Intimidation)}
     What do you fight for?
     + [I fight for myself. The thrill of an honourable fight keeps me sane.]
         -> next_scene_placeholder
+        {add_trait(Honourable)}
     + [I fight for power and status. Being able to step on the backs of others to get to the top means that I was stronger.]
         -> next_scene_placeholder
+        {add_trait(Immoral)}
     + [I fight to survive. Picking locks is a waste of time when I can just break down the door.]
         -> next_scene_placeholder
+        {add_trait(Survivor)}
     + [I fight to protect those who cannot defend themselves. Making somebodys life a little bit better makes me feel like I've earned my place in this world.]
         -> next_scene_placeholder
+        {add_trait(Moral)}
+        {add_trait(Generous)}
     + [I'm a mercenary. I know how to handle myself and I'm well paid, so long as I survive to the next day.]
         -> next_scene_placeholder
+        {add_skill(Negotiation)}
+        {add_trait(Cunning)}
     + [(BACK)]
     ~ Skills = ()
         -> choose_class
