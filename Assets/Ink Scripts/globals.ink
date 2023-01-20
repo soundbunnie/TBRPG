@@ -15,3 +15,7 @@ PLAYER FUNCTIONS
 === function add_skill(skill) ===
 ~ Skills += skill
 Gained skill: {skill}
+
+=== function remove_skill(skill) ===
+~ Skills -= skill 
+Lost skill: {skill}
