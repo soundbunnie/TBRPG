@@ -16,7 +16,6 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     {add_skill(Force)}
     {add_skill(Lifting)}
     {add_skill(Running)}
-    {add_skill(Intimidation)}
     {add_trait(Revered)}
     What do you fight for?
     + [I fight for myself. The thrill of an honourable fight keeps me sane.]
@@ -52,7 +51,6 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     {add_skill(Alchemy)}
     {add_skill(Writing)}
     {add_skill(Reading)}
-    {add_skill(Knowledge)}
     {add_trait(Outcast)}
     What do you hope to find in alchemy?
     + [I want to become a merchant. My brews are of the finest quality, and once I make enough connections in the merchant world, I'll finally sell them for what they're worth.]
@@ -78,12 +76,10 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     ~ player_class = "Thief"
     {add_skill(Stealth)}
     {add_skill(Theft)}
-    {add_skill(Persuasion)}
     {add_skill(Lying)}
     {add_skill(Lockpicking)}
     What drove you to this life?
     + [I'll do anything it takes to survive. Morality is a luxury only few can have. What matters most to me is that I make it to the next day.]
-        {add_skill(Persuasion)}
         {add_trait(Survivor)}
         ~ player_title = "Survivor"
         -> next_scene_placeholder

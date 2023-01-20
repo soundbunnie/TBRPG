@@ -8,7 +8,7 @@ VAR player_class = ""
 
 VAR player_title = ""
 
-LIST Skills = Acrobatics, Stealth, Theft, Lockpicking, Forgery, Persuasion, Intimidation, Lying, Charm, Lifting, Running, Strength, Alchemy, Cultures, Reading, Writing, Trading, Knowledge, Force, Negotiation
+LIST Skills = Acrobatics, Theft, Lockpicking, Forgery, Lying, Charm, Lifting, Running, Alchemy, Cultures, Reading, Writing, Trading, Force, Negotiation
 
 LIST Proficiencies = Swords, Spears, Shields, Daggers, Axes, Hammers, Unarmed, Instruments, Gambling
 
@@ -20,13 +20,20 @@ LIST Goals = Fight, Merchant, Enlightenment
 PLAYER STATS
 */
 
-VAR Perception = 0
-VAR Hiding = 0
+// Physical stats
+VAR Strength = 0
+VAR Stealth = 0
+
+// Mental stats
+VAR Influence = 0
 VAR Empathy = 0
-VAR History = 0
 VAR Logic = 0
 VAR Willpower = 0
 VAR Introspection = 0
+
+// Passive stats
+VAR Perception = 0
+VAR History = 0
 
 
 /* 
