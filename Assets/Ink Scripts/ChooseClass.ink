@@ -2,9 +2,6 @@ INCLUDE globals.ink
 -> choose_class
 
 === choose_class ===
-This is a first line of text to test something.
-Your skills are {Skills}
-Your class is {player_class}
 After some exposition, or dialogue, or something, it's time to decide who you are.
     + [I am a Warrior. I'll come home with my shield or on it.]
         -> warrior_choose_traits
@@ -18,7 +15,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     {add_skill(Strength)}
     {add_skill(Lifting)}
     {add_skill(Running)}
-    What do you fight for, {player_class}?
+    What do you fight for?
     + [I fight for myself. The thrill of an honourable fight keeps me sane.]
         -> next_scene_placeholder
     + [I fight for power and status. Being able to step on the backs of others to get to the top means that I was stronger.]
