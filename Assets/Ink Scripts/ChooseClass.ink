@@ -12,9 +12,6 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     
 === warrior_choose_traits ===
     ~ player_class = "Warrior"
-    {add_skill(Strength)}
-    {add_skill(Force)}
-    {add_skill(Lifting)}
     {add_skill(Running)}
     {add_trait(Revered)}
     What do you fight for?

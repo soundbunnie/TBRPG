@@ -24,19 +24,19 @@ MIN 1 MAX 5
 */
 
 // Physical stats
-VAR Strength = 1
-VAR Stealth = 1
+VAR Strength = (1)
+VAR Stealth = (1)
 
 // Mental stats
-VAR Influence = 1
-VAR Empathy = 1
-VAR Logic = 1
-VAR Willpower = 1
-VAR Introspection = 1
+VAR Influence = (1)
+VAR Empathy = (1)
+VAR Logic = (1)
+VAR Willpower = (1)
+VAR Introspection = (1)
 
 // Passive stats
-VAR Perception = 1
-VAR History = 1
+VAR Perception = (1)
+VAR History = (1)
 
 
 /* 
