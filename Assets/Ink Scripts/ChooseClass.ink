@@ -59,6 +59,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
         {add_skill(Negotiation)}
         -> next_scene_placeholder
     + [(BACK)]
+    ~ Skills = ()
         -> choose_class
 
 === thief_choose_traits ===
@@ -78,6 +79,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
         {add_trait(Immoral)}
         -> next_scene_placeholder
     + [I love chaos. I want to see the world burn and I'll go out of my way to rattle the cage.]
+        {add_trait(Chaotic)}
         -> next_scene_placeholder
     + [I hate the rich. So long as I exist, so too will class disparity, and the only way to rise above your station is to take every advantage you can.]
         -> next_scene_placeholder
