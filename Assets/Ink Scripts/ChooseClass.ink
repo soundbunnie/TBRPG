@@ -3,6 +3,8 @@ INCLUDE globals.ink
 
 === choose_class ===
 This is a first line of text to test something.
+Your skills are {Skills}
+Your class is {player_class}
 After some exposition, or dialogue, or something, it's time to decide who you are.
     + [I am a Warrior. I'll come home with my shield or on it.]
         -> warrior_choose_traits
@@ -25,6 +27,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     + [I'm a mercenary. I know how to handle myself and I'm well paid, so long as I survive to the next day.]
         -> next_scene_placeholder
     + [(BACK)]
+    {add_skill(strength)}
         -> choose_class
 
 === alchemist_choose_traits ===
