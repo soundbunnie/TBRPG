@@ -38,6 +38,8 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
         -> next_scene_placeholder
     + [(BACK)]
     ~ Skills = ()
+    ~ Traits = ()
+    ~ player_class = ""
         -> choose_class
 
 === alchemist_choose_traits ===
@@ -60,6 +62,8 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
         -> next_scene_placeholder
     + [(BACK)]
     ~ Skills = ()
+    ~ Traits = ()
+    ~ player_class = ""
         -> choose_class
 
 === thief_choose_traits ===
@@ -85,6 +89,9 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
         -> next_scene_placeholder
         {add_trait(Moral)}
     + [(BACK)]
+    ~ Skills = ()
+    ~ Traits = ()
+    ~ player_class = ""
         -> choose_class
 -> DONE
 
