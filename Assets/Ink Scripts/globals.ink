@@ -20,7 +20,11 @@ LIST Goals = Fight, Merchant, Enlightenment
 
 /* 
 PLAYER STATS
-MIN 1 MAX 5
+1: Basic competency
+2: Decent
+3: Good
+4: Very good
+5: Amazing
 */
 
 // Physical stats

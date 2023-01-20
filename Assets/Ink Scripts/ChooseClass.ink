@@ -16,44 +16,56 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     {add_trait(Revered)}
     
     // Physical stats
-    ~ Strength = 1
-    ~ Stealth = 1
+    ~ Strength = 4
+    ~ Stealth = 2
     
     // Mental stats
-    ~ Influence = 1
-    ~ Empathy = 1
+    ~ Influence = 3
+    ~ Empathy = 2
     ~ Logic = 1
-    ~ Willpower = 1
+    ~ Willpower = 3
     ~ Introspection = 1
     
     // Passive stats
-    ~ Perception = 1
+    ~ Perception = 3
     ~ History = 1
     
     What do you fight for?
-    + [I fight for myself. The thrill of an honourable fight keeps me sane.]
+    + [I fight for myself. The thrill of an honourable fight keeps me sane.] 
+    // + Honourable, Introspection
         {add_trait(Honourable)}
+        ~ Introspection += 1
         ~ player_title = "Honourable Warrior"
         -> choose_background
-    + [I fight for power and status. Being able to step on the backs of others to get to the top means that I was stronger.]
+    + [I fight for power and status. Being able to step on the backs of others to get to the top means that I was stronger.] 
+    // + Influence, Immoral - Empathy
         {add_trait(Immoral)}
+        ~ Influence += 1
+        ~ Empathy -= 1
         ~ player_title = "Powerhungry Warrior"
         -> choose_background
-    + [I fight to survive. Picking locks is a waste of time when I can just break down the door.]
+    + [I fight to survive. Picking locks is a waste of time when I can just break down the door.] 
+    // + Willpower, Survivor
         {add_trait(Survivor)}
+        ~ Willpower += 1
         ~ player_title = "Survivor"
         -> choose_background
     + [I fight to protect those who cannot defend themselves. Making somebodys life a little bit better makes me feel like I've earned my place in this world.]
+    // + Moral, Generous, Empathy
         {add_trait(Moral)}
         {add_trait(Generous)}
+        ~ Empathy += 1
         ~ player_title = "Chivalrous Warrior"
         -> choose_background
     + [I'm a mercenary. I know how to handle myself and I'm well paid, so long as I survive to the next day.]
+    // + Negotiation, Cunning, Introspection
         {add_skill(Negotiation)}
         {add_trait(Cunning)}
+        ~ Introspection += 1
         ~ player_title = "Mercenary"
         -> choose_background
     + [(BACK)]
+    // Reset all stats
     ~ Skills = ()
     ~ Traits = ()
     ~ player_class = ""
