@@ -15,6 +15,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     
 === warrior_choose_traits ===
     ~ player_class = "Warrior"
+    {add_skill(Strength)}
     What do you fight for, {player_class}?
     + [I fight for myself. The thrill of an honourable fight keeps me sane.]
         -> next_scene_placeholder
@@ -27,7 +28,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     + [I'm a mercenary. I know how to handle myself and I'm well paid, so long as I survive to the next day.]
         -> next_scene_placeholder
     + [(BACK)]
-    {add_skill(strength)}
+    ~ Skills = ()
         -> choose_class
 
 === alchemist_choose_traits ===

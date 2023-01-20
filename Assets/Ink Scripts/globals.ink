@@ -6,7 +6,7 @@ PLAYER VARIABLES
 
 VAR player_class = ""
 
-LIST Skills = acrobatics, stealth, theft, lockpicking, persuasion, intimidation, lying, charm, lifting, running, strength, alchemy, cultures, reading, writing, trading, knowledge
+LIST Skills = Acrobatics, Stealth, Theft, Lockpicking, Persuasion, Intimidation, Lying, Charm, Lifting, Running, Strength, Alchemy, Cultures, Reading, Writing, Trading, Knowledge
 
 /* 
 PLAYER FUNCTIONS
@@ -14,3 +14,4 @@ PLAYER FUNCTIONS
 
 === function add_skill(skill) ===
 ~ Skills += skill
+Gained skill: {skill}
