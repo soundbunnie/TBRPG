@@ -6,7 +6,7 @@ PLAYER VARIABLES
 
 VAR player_class = ""
 
-LIST Skills = Acrobatics, Stealth, Theft, Lockpicking, Persuasion, Intimidation, Lying, Charm, Lifting, Running, Strength, Alchemy, Cultures, Reading, Writing, Trading, Knowledge
+LIST Skills = Acrobatics, Stealth, Theft, Lockpicking, Forgery, Persuasion, Intimidation, Lying, Charm, Lifting, Running, Strength, Alchemy, Cultures, Reading, Writing, Trading, Knowledge
 
 /* 
 PLAYER FUNCTIONS

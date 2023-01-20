@@ -16,6 +16,8 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
 === warrior_choose_traits ===
     ~ player_class = "Warrior"
     {add_skill(Strength)}
+    {add_skill(Lifting)}
+    {add_skill(Running)}
     What do you fight for, {player_class}?
     + [I fight for myself. The thrill of an honourable fight keeps me sane.]
         -> next_scene_placeholder
