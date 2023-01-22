@@ -6,9 +6,17 @@ public class Popup : MonoBehaviour
 {
     [SerializeField] private GameObject popupPanel;
 
+    private static Popup instance;
+
     public void Awake()
     {
+        instance = this;
         popupPanel.SetActive(false);
+    }
+
+    public static Popup GetInstance()
+    {
+        return instance;
     }
 
     public void OpenPopup()
