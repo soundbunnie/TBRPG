@@ -106,7 +106,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     What do you hope to find in alchemy?
     + [I want to become a merchant. My brews are of the finest quality, and once I make enough connections in the merchant world, I'll finally sell them for what they're worth.]
     // + Trading, +2 Influence
-        {add_skill(Trading)}
+        {add_skill(Trading)} #popup:gained_trading
         {add_skill(Negotiation)}
         ~ Influence += 2
         ~ player_title = "Potion Seller"

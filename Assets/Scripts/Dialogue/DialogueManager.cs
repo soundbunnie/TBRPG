@@ -12,7 +12,6 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.04f;
 
     [Header("Dialogue UI")]
-
     [SerializeField] private GameObject speechPanel;
     [SerializeField] private TextMeshProUGUI speechText;
     [SerializeField] private TextAsset inkJSON;
@@ -23,6 +22,9 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
+
+    [Header("Ink tags")]
+    private const string POPUP_TAG = "popup";
 
     private Story currentStory;
 
@@ -120,6 +122,8 @@ public class DialogueManager : MonoBehaviour
                 StopCoroutine(displayLineCoroutine);
             }
             textAdvancePressed = false;
+            // handle tags
+            HandleTags(currentStory.currentTags);
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
         }
         else
@@ -127,6 +131,30 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("No more lines");
         }
         textAdvancePressed = false;
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        // loop through each tag and handle it accordingly
+        foreach (string tag in currentTags)
+        {
+            // split tag into key/value pair
+            string[] splitTag = tag.Split(':');
+            if (splitTag.Length != 2)
+            {
+                Debug.LogError("Tag could not be appropriately split: " + tag);
+            }
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+
+            // handle the tag
+            switch (tagKey)
+            {
+                case POPUP_TAG:
+                    Debug.Log(tagValue);
+                    break;
+            }
+        }
     }
 
     private IEnumerator DisplayLine(string line)
