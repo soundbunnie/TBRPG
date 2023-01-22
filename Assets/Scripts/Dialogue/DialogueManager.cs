@@ -161,7 +161,6 @@ public class DialogueManager : MonoBehaviour
     {
         // empty the speech text
         speechText.text = "";
-
         canContinueToNextLine = false;
         HideChoices();
 

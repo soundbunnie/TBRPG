@@ -25,11 +25,11 @@ public class Popup : MonoBehaviour
     }
     public void OnClose()
     {
-        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.2f).setOnComplete(DestroyMe);
+        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.2f).setOnComplete(HidePopup);
     }
 
-    public void DestroyMe()
+    public void HidePopup()
     {
-        Destroy(gameObject);
+        popupPanel.SetActive(false);
     }
 }

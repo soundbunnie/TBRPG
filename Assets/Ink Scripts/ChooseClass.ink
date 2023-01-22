@@ -3,7 +3,7 @@ INCLUDE globals.ink
 
 === choose_class ===
 After some exposition, or dialogue, or something, it's time to decide who you are.
-    + [I am a Warrior. I'll come home with my shield or on it.] #popup:gained_trading
+    + [I am a Warrior. I'll come home with my shield or on it.]
         -> warrior_choose_traits
     + [I am an alchemist. Most will call me a witch, but my brews are simply the results of many years of study in my field.]
         -> alchemist_choose_traits
