@@ -6,7 +6,7 @@ public class Popup : MonoBehaviour
 {
     public void OnClose()
     {
-        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.5f).setOnComplete(DestroyMe);
+        LeanTween.scale(gameObject, new Vector3(0, 0, 0), 0.2f).setOnComplete(DestroyMe);
     }
 
     public void DestroyMe()
