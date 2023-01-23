@@ -2053,6 +2053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupPanel: {fileID: 317100532}
+  popupText: {fileID: 1257781671}
 --- !u!1 &322689473
 GameObject:
   m_ObjectHideFlags: 0

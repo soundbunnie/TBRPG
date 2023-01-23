@@ -50,24 +50,24 @@ PLAYER FUNCTIONS
 
 === function add_skill(skill) ===
 ~ Skills += skill
-Gained skill: {skill} #popup:gained_trait
+Gained skill: {skill}
 
 === function remove_skill(skill) ===
 ~ Skills -= skill 
-Lost skill: {skill} #popup:gained_trait
+Lost skill: {skill}
 
 === function add_proficiency(proficiency) ===
 ~ Proficiencies += proficiency
-New proficiency: {proficiency} #popup:gained_trait
+New proficiency: {proficiency}
 
 === function remove_proficiency(proficiency) ===
 ~ Proficiencies -= proficiency
-Lost proficiency: {proficiency} #popup:gained_trait
+Lost proficiency: {proficiency}
 
 === function add_trait(trait) ===
 ~ Traits += trait
-New trait: {trait} #popup:gained_trait
+New trait: {trait} #popup:gained trait
 
 === function remove_trait(trait) ===
 ~ Traits -= trait
-Lost trait: {trait} #popup:gained_trait
+Lost trait: {trait}

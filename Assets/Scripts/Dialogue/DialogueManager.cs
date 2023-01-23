@@ -151,7 +151,8 @@ public class DialogueManager : MonoBehaviour
             switch (tagKey)
             {
                 case POPUP_TAG:
-                    Popup.GetInstance().OpenPopup();
+                    Popup.GetInstance().OpenPopup(tagValue);
+                    Debug.Log(tagValue);
                     break;
             }
         }

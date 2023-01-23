@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Popup : MonoBehaviour
 {
     [SerializeField] private GameObject popupPanel;
+    [SerializeField] private TextMeshProUGUI popupText;
 
     private static Popup instance;
 
@@ -19,8 +21,9 @@ public class Popup : MonoBehaviour
         return instance;
     }
 
-    public void OpenPopup()
+    public void OpenPopup(string popupLine)
     {
+        popupText.text = popupLine;
         popupPanel.SetActive(true);
     }
     public void OnClose()
