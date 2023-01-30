@@ -5514,6 +5514,7 @@ MonoBehaviour:
   speechText: {fileID: 917713832}
   inkJSON: {fileID: 4900000, guid: 235844de4ec88ed45a61b2a578ffb7f3, type: 3}
   portraitText: {fileID: 136637250}
+  portraitAnimator: {fileID: 1289780588}
   choices:
   - {fileID: 29906089}
   - {fileID: 1462483662}
@@ -8706,6 +8707,7 @@ GameObject:
   - component: {fileID: 1289780585}
   - component: {fileID: 1289780587}
   - component: {fileID: 1289780586}
+  - component: {fileID: 1289780588}
   m_Layer: 5
   m_Name: PortraitImage
   m_TagString: Untagged
@@ -8771,6 +8773,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289780584}
   m_CullTransparentMesh: 1
+--- !u!95 &1289780588
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289780584}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce513f3c45153c6498d274d74fa932f1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1295878450
 GameObject:
   m_ObjectHideFlags: 0

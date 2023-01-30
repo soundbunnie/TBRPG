@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI speechText;
     [SerializeField] private TextAsset inkJSON;
     [SerializeField] private TextMeshProUGUI portraitText;
+    [SerializeField] private Animator portraitAnimator;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -158,7 +159,7 @@ public class DialogueManager : MonoBehaviour
                     Debug.Log(tagValue);
                     break;
                 case PORTRAIT_IMG:
-                    Debug.Log(tagValue);
+                    portraitAnimator.Play(tagValue);
                     break;
             }
         }
