@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject speechPanel;
     [SerializeField] private TextMeshProUGUI speechText;
     [SerializeField] private TextAsset inkJSON;
+    [SerializeField] private TextMeshProUGUI portraitText;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -25,6 +26,8 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Ink tags")]
     private const string POPUP_TAG = "popup";
+    private const string PORTRAIT_TEXT = "portraitText";
+    private const string PORTRAIT_IMG = "portraitImg";
 
     private Story currentStory;
 
@@ -150,8 +153,11 @@ public class DialogueManager : MonoBehaviour
             // handle the tag
             switch (tagKey)
             {
-                case POPUP_TAG: // Note: This will add a blank line of text instead of continuing, for some reason.
-                    Popup.GetInstance().OpenPopup(tagValue);
+                case PORTRAIT_TEXT: // For some reason, this only applies the line after the tag.
+                    portraitText.text = tagValue;
+                    Debug.Log(tagValue);
+                    break;
+                case PORTRAIT_IMG:
                     Debug.Log(tagValue);
                     break;
             }

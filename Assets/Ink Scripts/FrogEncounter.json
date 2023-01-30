@@ -1,0 +1,1 @@
+﻿{"inkVersion":20,"root":[["^You encounter a frog! ",{"#":"portraitText:Frog"},{"#":"portraitImg: FrogDude"},"\n",{"->":"encounterFrog"},["done",{"#f":5,"#n":"g-0"}],null],"done",{"encounterFrog":["^He seems like a very good boy.","\n","^Test.","\n","end",{"#f":1}],"#f":1}],"listDefs":{}}
