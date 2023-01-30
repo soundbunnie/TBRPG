@@ -1,4 +1,4 @@
-You encounter a frog! #portraitText:Frog #portraitImg: frog_dude_neutral
+You encounter a frog! #portraitText:Frog #portraitImg: frog_dude_neutral #observations:He looks to be around 3.5 in tall. Seems to have a friendly disposition.
 -> encounterFrog
 
 === encounterFrog ===

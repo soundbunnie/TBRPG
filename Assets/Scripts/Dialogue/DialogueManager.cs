@@ -14,9 +14,11 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject speechPanel;
     [SerializeField] private GameObject portrait;
+    [SerializeField] private GameObject infoPanel;
     [SerializeField] private TextMeshProUGUI speechText;
     [SerializeField] private TextAsset inkJSON;
     [SerializeField] private TextMeshProUGUI portraitText;
+    [SerializeField] private TextMeshProUGUI observationsText;
     [SerializeField] private Animator portraitAnimator;
 
     [Header("Choices UI")]
@@ -28,6 +30,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Ink tags")]
     private const string POPUP_TAG = "popup";
+    private const string OBSERVATION_TAG = "observations";
     private const string PORTRAIT_TEXT = "portraitText";
     private const string PORTRAIT_IMG = "portraitImg";
 
@@ -54,6 +57,8 @@ public class DialogueManager : MonoBehaviour
         instance = this;
 
         portrait.SetActive(false);
+
+        infoPanel.SetActive(false);
 
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
     }
@@ -158,8 +163,20 @@ public class DialogueManager : MonoBehaviour
             {
                 case PORTRAIT_TEXT: // For some reason, this only applies the line after the tag.
                     portraitText.text = tagValue;
-                    Debug.Log(tagValue);
                     break;
+                case OBSERVATION_TAG:
+                    if (tagValue == "empty")
+                    {
+                        observationsText.text = "";
+                        infoPanel.SetActive(false);
+                        break;
+                    }
+                    else
+                    {
+                        infoPanel.SetActive(true);
+                        observationsText.text = tagValue;
+                        break;
+                    }
                 case PORTRAIT_IMG:
                     if (tagValue == "default")
                     {
