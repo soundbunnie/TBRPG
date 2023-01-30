@@ -33,7 +33,8 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     What do you fight for?
     + [I fight for myself. The thrill of an honourable fight keeps me sane.] 
     // + Honourable, Introspection
-        {add_trait(Honourable)} 
+        ~ Traits += Honourable
+        This is another line of text.
         ~ Introspection += 1
         ~ player_title = "Honourable Warrior"
         -> choose_background

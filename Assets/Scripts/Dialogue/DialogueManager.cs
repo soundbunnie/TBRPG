@@ -150,7 +150,7 @@ public class DialogueManager : MonoBehaviour
             // handle the tag
             switch (tagKey)
             {
-                case POPUP_TAG:
+                case POPUP_TAG: // Note: This will add a blank line of text instead of continuing, for some reason.
                     Popup.GetInstance().OpenPopup(tagValue);
                     Debug.Log(tagValue);
                     break;
