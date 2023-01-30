@@ -181,7 +181,8 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator DisplayLine(string line)
     {
         // empty the speech text
-        speechText.text = "";
+        speechText.text = line;
+        speechText.maxVisibleCharacters = 0;
         canContinueToNextLine = false;
         HideChoices();
 
@@ -193,7 +194,7 @@ public class DialogueManager : MonoBehaviour
             
             if (textAdvancePressed)//if (InputManager.GetInstance().GetSubmitPressed())
             {
-                speechText.text = line;
+                speechText.maxVisibleCharacters = line.Length;
                 textAdvancePressed = false;
                 break;
             }
@@ -211,7 +212,7 @@ public class DialogueManager : MonoBehaviour
 
             else
             {
-                speechText.text += letter;
+                speechText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(typingSpeed);
             }
 
