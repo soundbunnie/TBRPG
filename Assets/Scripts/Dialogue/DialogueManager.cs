@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Dialogue UI")]
     [SerializeField] private GameObject speechPanel;
+    [SerializeField] private GameObject portrait;
     [SerializeField] private TextMeshProUGUI speechText;
     [SerializeField] private TextAsset inkJSON;
     [SerializeField] private TextMeshProUGUI portraitText;
@@ -51,7 +52,9 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Found more than one Dialogue Manager in the scene.");
         }
         instance = this;
-        
+
+        portrait.SetActive(false);
+
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
     }
 
@@ -159,8 +162,18 @@ public class DialogueManager : MonoBehaviour
                     Debug.Log(tagValue);
                     break;
                 case PORTRAIT_IMG:
-                    portraitAnimator.Play(tagValue);
-                    break;
+                    if (tagValue == "default")
+                    {
+                        portrait.SetActive(false);
+                        break;
+                    }
+                    else
+                    {
+                        portrait.SetActive(true);
+                        portraitAnimator.Play(tagValue);
+                        break;
+                    }
+
             }
         }
     }
