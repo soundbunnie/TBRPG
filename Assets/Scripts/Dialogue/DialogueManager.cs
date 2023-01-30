@@ -137,7 +137,6 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("No more lines");
         }
-        textAdvancePressed = false;
     }
 
     private void HandleTags(List<string> currentTags)
