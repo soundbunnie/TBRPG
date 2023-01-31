@@ -124,7 +124,7 @@ STAT BLOCKS
 
 
 // Passive stats
-~ Perception = (3)
+~ Perception = (1)
 ~ ReactionSpeed = (1)
 ~ History = (1)
 
@@ -186,4 +186,17 @@ STAT BLOCKS
 ~ ReactionSpeed = (1)
 ~ History = (1)
 
-
+=== function perception_roll(difficulty) ===
+VAR roll_result = ()
+VAR to_pass = ()
+VAR passed = ()
+~ temp dice_roll = RANDOM(1, 8) + Perception
+{difficulty:
+- "Easy": ~ to_pass = 2
+- "Medium": ~ to_pass = 4
+- "Hard": ~ to_pass = 6
+- "Absurd": ~ to_pass = 8
+}
+{dice_roll > to_pass:
+Passed! {dice_roll}
+}
