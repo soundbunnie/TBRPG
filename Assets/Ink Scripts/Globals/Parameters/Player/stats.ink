@@ -3,7 +3,8 @@ PLAYER STATS
 Min: 1
 Max: 5
 */
-
+VAR stats_loaded = false
+{!stats_loaded:
 /*
 PHYSICAL STAT EXPLANATIONS:
 Health is just a standard point system. 
@@ -65,12 +66,13 @@ History is the players knowledge of the world.
 VAR Perception = (1)
 VAR ReactionSpeed = (1)
 VAR History = (1)
-
+~ stats_loaded = true
+}
 /*
 STAT BLOCKS
 */
 
-=== function set_default_stats ===
+=== function set_default_stats() ===
 //Physical stats
 ~ Health = 10
 ~ Acrobatics = 1
@@ -99,7 +101,7 @@ STAT BLOCKS
 ~ ReactionSpeed = (1)
 ~ History = (1)
 
-=== function set_warrior_stats ===
+=== function set_warrior_stats() ===
 //Physical stats
 ~ Health = (10)
 ~ Acrobatics = (1)
@@ -128,7 +130,7 @@ STAT BLOCKS
 ~ ReactionSpeed = (1)
 ~ History = (1)
 
-=== function set_thief_stats ===
+=== function set_thief_stats() ===
 //Physical stats
 ~ Health = (10)
 ~ Acrobatics = (1)

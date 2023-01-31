@@ -1,6 +1,5 @@
 LIST Proficiencies = Swords, Spears, Shields, Daggers, Axes, Hammers, Unarmed, Instruments, Gambling
 
-
 === function add_proficiency(proficiency) ===
 ~ Proficiencies += proficiency
 
