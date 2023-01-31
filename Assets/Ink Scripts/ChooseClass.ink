@@ -1,5 +1,3 @@
-INCLUDE Globals\globals.ink
-
 === choose_class ===
 #observations: empty
 #portraitImg: none
