@@ -72,115 +72,118 @@ STAT BLOCKS
 
 === function set_default_stats ===
 //Physical stats
-Health = (10)
-Acrobatics = (1)
-Strength = (1)
-Foraging = (1)
-Discerning = (1)
+~ Health = (10)
+~ Acrobatics = (1)
+~ Strength = (1)
+~ Foraging = (1)
+~ Discerning = (1)
 
 // Sneaky stats
-Stealth = (1)
-Lockpicking = (1)
-SleightOfHand = (1)
+~ Stealth = (1)
+~ Lockpicking = (1)
+~ SleightOfHand = (1)
 
 // Mental stats
-Influence = (1)
-Intimidation = (1)
-Negotiation = (1)
-Charm = (1)
-Empathy = (1)
-Logic = (1)
-Willpower = (1)
-Introspection = (1)
+~ Influence = (1)
+~ Intimidation = (1)
+~ Negotiation = (1)
+~ Charm = (1)
+~ Empathy = (1)
+~ Logic = (1)
+~ Willpower = (1)
+~ Introspection = (1)
 
 
 // Passive stats
-Perception = (1)
-ReactionSpeed = (1)
-History = (1)
+~ Perception = (1)
+~ ReactionSpeed = (1)
+~ History = (1)
 
 === function set_warrior_stats ===
 //Physical stats
-Health = (10)
-Acrobatics = (1)
-Strength = (1)
-Foraging = (1)
-Discerning = (1)
+~ Health = (10)
+~ Acrobatics = (1)
+~ Strength = (1)
+~ Foraging = (1)
+~ Discerning = (1)
 
 // Sneaky stats
-Stealth = (1)
-Lockpicking = (1)
-SleightOfHand = (1)
+~ Stealth = (1)
+~ Lockpicking = (1)
+~ SleightOfHand = (1)
 
 // Mental stats
-Influence = (1)
-Intimidation = (1)
-Negotiation = (1)
-Charm = (1)
-Empathy = (1)
-Logic = (1)
-Willpower = (1)
-Introspection = (1)
+~ Influence = (1)
+~ Intimidation = (1)
+~ Negotiation = (1)
+~ Charm = (1)
+~ Empathy = (1)
+~ Logic = (1)
+~ Willpower = (1)
+~ Introspection = (1)
+
 
 // Passive stats
-Perception = (1)
-ReactionSpeed = (1)
-History = (1)
+~ Perception = (1)
+~ ReactionSpeed = (1)
+~ History = (1)
 
 === function set_thief_stats ===
 //Physical stats
-Health = (10)
-Acrobatics = (1)
-Strength = (1)
-Foraging = (1)
-Discerning = (1)
+~ Health = (10)
+~ Acrobatics = (1)
+~ Strength = (1)
+~ Foraging = (1)
+~ Discerning = (1)
 
 // Sneaky stats
-Stealth = (1)
-Lockpicking = (1)
-SleightOfHand = (1)
+~ Stealth = (1)
+~ Lockpicking = (1)
+~ SleightOfHand = (1)
 
 // Mental stats
-Influence = (1)
-Intimidation = (1)
-Negotiation = (1)
-Charm = (1)
-Empathy = (1)
-Logic = (1)
-Willpower = (1)
-Introspection = (1)
+~ Influence = (1)
+~ Intimidation = (1)
+~ Negotiation = (1)
+~ Charm = (1)
+~ Empathy = (1)
+~ Logic = (1)
+~ Willpower = (1)
+~ Introspection = (1)
+
 
 // Passive stats
-Perception = (1)
-ReactionSpeed = (1)
-History = (1)
+~ Perception = (1)
+~ ReactionSpeed = (1)
+~ History = (1)
 
 === function set_alchemist_stats===
 //Physical stats
-Health = (10)
-Acrobatics = (1)
-Strength = (1)
-Foraging = (1)
-Discerning = (1)
+~ Health = (10)
+~ Acrobatics = (1)
+~ Strength = (1)
+~ Foraging = (1)
+~ Discerning = (1)
 
 // Sneaky stats
-Stealth = (1)
-Lockpicking = (1)
-SleightOfHand = (1)
+~ Stealth = (1)
+~ Lockpicking = (1)
+~ SleightOfHand = (1)
 
 // Mental stats
-Influence = (1)
-Intimidation = (1)
-Negotiation = (1)
-Charm = (1)
-Empathy = (1)
-Logic = (1)
-Willpower = (1)
-Introspection = (1)
+~ Influence = (1)
+~ Intimidation = (1)
+~ Negotiation = (1)
+~ Charm = (1)
+~ Empathy = (1)
+~ Logic = (1)
+~ Willpower = (1)
+~ Introspection = (1)
+
 
 // Passive stats
-Perception = (1)
-ReactionSpeed = (1)
-History = (1)
+~ Perception = (1)
+~ ReactionSpeed = (1)
+~ History = (1)
 
 

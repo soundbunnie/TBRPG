@@ -14,6 +14,6 @@ VAR player_class = ""
 
 VAR player_name = ""
 
-VAR player_title = ""
+VAR player_title = "nothing"
 
 
