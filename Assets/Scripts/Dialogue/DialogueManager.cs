@@ -101,7 +101,6 @@ public class DialogueManager : MonoBehaviour
     {
         speechText.text = "";
         dialogueIsPlaying = false;
-
         dialogueVariables.StopListening(currentStory);
     }
 
@@ -151,6 +150,7 @@ public class DialogueManager : MonoBehaviour
             switch (tagKey)
             {
                 case PORTRAIT_TEXT: // For some reason, this only applies the line after the tag.
+                    Debug.Log(tagValue);
                     portraitText.text = tagValue;
                     break;
                 case OBSERVATION_TAG:
@@ -162,6 +162,7 @@ public class DialogueManager : MonoBehaviour
                     }
                     else
                     {
+                        Debug.Log(tagValue);
                         infoPanel.SetActive(true);
                         observationsText.text = tagValue;
                         break;
@@ -174,6 +175,7 @@ public class DialogueManager : MonoBehaviour
                     }
                     else
                     {
+                        Debug.Log(tagValue);
                         portrait.SetActive(true);
                         portraitAnimator.Play(tagValue);
                         break;

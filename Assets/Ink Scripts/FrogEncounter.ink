@@ -1,11 +1,8 @@
 INCLUDE ChooseClass.ink
-You encounter a frog! 
+You encounter a frog! #portraitText:Frog #portraitImg: frog_dude_neutral  #observations:He looks to be around 3.5 in tall. Seems to have a friendly disposition.
 -> encounterFrog
 
 === encounterFrog ===
-#portraitText:Frog 
-#portraitImg: frog_dude_neutral 
-#observations:He looks to be around 3.5 in tall. Seems to have a friendly disposition.
 He seems like a very good boy.
 What do you do?
 + [Pet him]

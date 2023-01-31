@@ -49,19 +49,26 @@ PLAYER FUNCTIONS
 */
 
 === function add_skill(skill) ===
-~ Skills += skill
+{ skill >= 10:
+Skills += skill
+}
+
 
 === function remove_skill(skill) ===
 ~ Skills -= skill 
 
 === function add_proficiency(proficiency) ===
-~ Proficiencies += proficiency
+{ proficiency >= 10:
+Proficiencies += proficiency
+}
 
 === function remove_proficiency(proficiency) ===
 ~ Proficiencies -= proficiency
 
 === function add_trait(trait) ===
-~ Traits += trait
+{ trait >= 10:
+Traits += trait
+}
 
 === function remove_trait(trait) ===
 ~ Traits -= trait
