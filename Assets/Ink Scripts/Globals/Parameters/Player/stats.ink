@@ -124,7 +124,7 @@ STAT BLOCKS
 
 
 // Passive stats
-~ Perception = (1)
+~ Perception = (3)
 ~ ReactionSpeed = (1)
 ~ History = (1)
 
