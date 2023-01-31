@@ -3,6 +3,7 @@ INCLUDE globals.ink
 === choose_class ===
 #observations: empty
 #portraitImg: none
+{set_default_stats()}
 After some exposition, or dialogue, or something, it's time to decide who you are.
     + [I am a Warrior. I'll come home with my shield or on it.]
         -> warrior_choose_traits
@@ -13,6 +14,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     
 === warrior_choose_traits ===
     ~ player_class = "Warrior"
+    {set_warrior_stats()}
     What do you fight for?
     + [I fight for myself. The thrill of an honourable fight keeps me sane.] 
         This is another line of text.
@@ -31,7 +33,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
 
 === alchemist_choose_traits ===
     ~ player_class = "Alchemist"
-    
+    {set_alchemist_stats()}
     What do you hope to find in alchemy?
     + [I want to become a merchant. My brews are of the finest quality, and once I make enough connections in the merchant world, I'll finally sell them for what they're worth.]
         -> choose_background
@@ -46,7 +48,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
 
 === thief_choose_traits ===
     ~ player_class = "Thief"
-    
+    {set_thief_stats()}
     What drove you to this life?
     + [I'll do anything it takes to survive. Morality is a luxury only few can have. What matters most to me is that I make it to the next day.]
         -> choose_background
