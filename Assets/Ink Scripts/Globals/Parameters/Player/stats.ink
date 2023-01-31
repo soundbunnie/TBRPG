@@ -186,11 +186,11 @@ STAT BLOCKS
 ~ ReactionSpeed = (1)
 ~ History = (1)
 
-=== function perception_roll(difficulty) ===
+=== function stat_check(stat, difficulty) ===
 VAR roll_result = ()
 VAR to_pass = ()
 VAR passed = ()
-~ temp dice_roll = RANDOM(1, 8) + Perception
+~ temp dice_roll = RANDOM(1, 8) + stat
 {difficulty:
 - "Easy": ~ to_pass = 2
 - "Medium": ~ to_pass = 4
