@@ -121,7 +121,6 @@ public class DialogueManager : MonoBehaviour
             {
                 StopCoroutine(displayLineCoroutine);
             }
-            HandleTags(currentStory.currentTags);
             Debug.Log("handling tags");
             textAdvancePressed = false;
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
@@ -192,6 +191,7 @@ public class DialogueManager : MonoBehaviour
         // empty the speech text
         speechText.text = line;
         speechText.maxVisibleCharacters = 0;
+        HandleTags(currentStory.currentTags);
         canContinueToNextLine = false;
         HideChoices();
 
