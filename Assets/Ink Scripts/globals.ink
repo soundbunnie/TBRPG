@@ -1,8 +1,9 @@
-// Skills, stats and proficiencies
+// Skills, stats, proficiencies and goals
 INCLUDE Globals\stats.ink
 INCLUDE Globals\skills.ink
 INCLUDE Globals\proficiencies.ink
 INCLUDE Globals\traits.ink
+INCLUDE Globals\goals.ink
 VAR pokemon_name = ""
 
 /*
@@ -15,4 +16,4 @@ VAR player_name = ""
 
 VAR player_title = ""
 
-LIST Goals = Battle, Merchant, Knowledge, Chaos, Betterment, Kleptomania, Contentment
+
