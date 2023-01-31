@@ -192,7 +192,7 @@ VAR passed = ()
 ~ passed = false
 ~ temp dice_roll = RANDOM(1, 20) + stat
 {difficulty:
-- "Easy": ~ to_pass = 8
+- "Easy": ~ to_pass = 2
 - "Medium": ~ to_pass = 12
 - "Hard": ~ to_pass = 16
 - "Absurd": ~ to_pass = 21

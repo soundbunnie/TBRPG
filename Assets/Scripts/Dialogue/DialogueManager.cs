@@ -163,7 +163,7 @@ public class DialogueManager : MonoBehaviour
                     {
                         Debug.Log(tagValue);
                         infoPanel.SetActive(true);
-                        observationsText.text = tagValue;
+                        observationsText.text += " " + tagValue;
                         break;
                     }
                 case PORTRAIT_IMG:
@@ -194,7 +194,7 @@ public class DialogueManager : MonoBehaviour
         canContinueToNextLine = false;
         HandleTags(currentStory.currentTags);
         HideChoices();
-
+         
         bool isAddingRichTextTag = false;
 
         // display each letter one at a time
