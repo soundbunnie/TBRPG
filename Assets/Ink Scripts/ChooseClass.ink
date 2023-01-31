@@ -1,7 +1,8 @@
 INCLUDE globals.ink
--> choose_class
 
 === choose_class ===
+#observations: empty
+#portraitImg: none
 After some exposition, or dialogue, or something, it's time to decide who you are.
     + [I am a Warrior. I'll come home with my shield or on it.]
         -> warrior_choose_traits

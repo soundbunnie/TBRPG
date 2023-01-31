@@ -56,10 +56,6 @@ public class DialogueManager : MonoBehaviour
         }
         instance = this;
 
-        portrait.SetActive(false);
-
-        infoPanel.SetActive(false);
-
         dialogueVariables = new DialogueVariables(loadGlobalsJSON);
     }
 
@@ -90,20 +86,13 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
-
-        //if (canContinueToNextLine
-            //&& InputManager.GetInstance().GetSubmitPressed()
-            //&& currentStory.currentChoices.Count == 0)
-        //{
-           // ContinueStory();
-       // }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
-        ContinueStory();
+        ContinueStory(); 
 
         dialogueVariables.StartListening(currentStory);
     }
@@ -133,9 +122,9 @@ public class DialogueManager : MonoBehaviour
             {
                 StopCoroutine(displayLineCoroutine);
             }
-            textAdvancePressed = false;
-            // handle tags
             HandleTags(currentStory.currentTags);
+            Debug.Log("handling tags");
+            textAdvancePressed = false;
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
         }
         else
@@ -178,7 +167,7 @@ public class DialogueManager : MonoBehaviour
                         break;
                     }
                 case PORTRAIT_IMG:
-                    if (tagValue == "default")
+                    if (tagValue == "none")
                     {
                         portrait.SetActive(false);
                         break;
@@ -189,7 +178,9 @@ public class DialogueManager : MonoBehaviour
                         portraitAnimator.Play(tagValue);
                         break;
                     }
-
+                default:
+                    Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
+                    break;
             }
         }
     }
