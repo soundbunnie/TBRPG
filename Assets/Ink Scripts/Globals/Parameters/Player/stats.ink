@@ -198,5 +198,6 @@ VAR passed = ()
 - "Absurd": ~ to_pass = 8
 }
 {dice_roll > to_pass:
+~ passed = true
 Passed! {dice_roll}
 }
