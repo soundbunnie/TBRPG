@@ -72,11 +72,11 @@ STAT BLOCKS
 
 === function set_default_stats ===
 //Physical stats
-~ Health = (10)
-~ Acrobatics = (1)
-~ Strength = (1)
-~ Foraging = (1)
-~ Discerning = (1)
+~ Health = 10
+~ Acrobatics = 1
+~ Strength = 1
+~ Foraging = 1
+~ Discerning = 1
 
 // Sneaky stats
 ~ Stealth = (1)

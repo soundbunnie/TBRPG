@@ -1,4 +1,4 @@
-INCLUDE globals.ink
+INCLUDE Globals\globals.ink
 
 === choose_class ===
 #observations: empty

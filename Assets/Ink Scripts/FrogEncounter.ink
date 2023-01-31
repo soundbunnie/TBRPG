@@ -1,4 +1,4 @@
-INCLUDE ChooseClass.ink
+INCLUDE Globals\globals.ink
 You encounter a frog! #portraitText:Frog #portraitImg: frog_dude_neutral  #observations:He looks to be around 3.5 in tall. Seems to have a friendly disposition.
 -> encounterFrog
 
@@ -9,5 +9,5 @@ What do you do?
     He's bursting with energy now! #portraitImg: frog_dude_happy
 + [Nothing]
     All right then.
-- End of encounter. 
--> choose_class
+- End of encounter.
+-> DONE
