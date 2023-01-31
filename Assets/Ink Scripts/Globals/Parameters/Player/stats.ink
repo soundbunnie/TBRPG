@@ -187,17 +187,16 @@ STAT BLOCKS
 ~ History = (1)
 
 === function stat_check(stat, difficulty) ===
-VAR roll_result = ()
 VAR to_pass = ()
 VAR passed = ()
+~ passed = false
 ~ temp dice_roll = RANDOM(1, 8) + stat
 {difficulty:
 - "Easy": ~ to_pass = 2
 - "Medium": ~ to_pass = 4
 - "Hard": ~ to_pass = 6
-- "Absurd": ~ to_pass = 8
+- "Absurd": ~ to_pass = 11
 }
 {dice_roll > to_pass:
 ~ passed = true
-Passed! {dice_roll}
 }
