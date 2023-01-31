@@ -191,8 +191,8 @@ public class DialogueManager : MonoBehaviour
         // empty the speech text
         speechText.text = line;
         speechText.maxVisibleCharacters = 0;
-        HandleTags(currentStory.currentTags);
         canContinueToNextLine = false;
+        HandleTags(currentStory.currentTags);
         HideChoices();
 
         bool isAddingRichTextTag = false;
