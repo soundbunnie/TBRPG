@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private static AudioManager instance;
     #region Fields
     [Header("Fields")]
     private AudioSource musicSource;
@@ -13,16 +12,32 @@ public class AudioManager : MonoBehaviour
 
     private bool firstMusicSourceIsPlaying;
     #endregion
-    
+    #region Static Instance
+    private static AudioManager instance;
+    public static AudioManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<AudioManager>();
+                if (instance == null)
+                {
+                    instance = new GameObject("Spawned AudioManager", typeof(AudioManager)).GetComponent<AudioManager>());
+                }
+            }
+
+            return instance;
+        }
+        private set
+        {
+            instance = value;
+        }
+    }
+    #endregion
+
     private void Awake()
     {
-        #region Static Instance
-        if (instance != null)
-        {
-            Debug.LogWarning("Found more than one Audio Manager in the scene.");
-        }
-        instance = this;
-        #endregion
         // Make sure to not destroy this instance
         DontDestroyOnLoad(this.gameObject);
 
