@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
+    #region Fields
     [Header("Params")]
     [SerializeField] private float typingSpeed = 0.04f;
 
@@ -47,7 +48,7 @@ public class DialogueManager : MonoBehaviour
     private DialogueVariables dialogueVariables;
 
     private static DialogueManager instance;
-
+    #endregion
     private void Awake()
     {
         if (instance != null)
