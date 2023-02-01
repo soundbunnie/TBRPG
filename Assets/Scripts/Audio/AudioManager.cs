@@ -51,6 +51,74 @@ public class AudioManager : MonoBehaviour
         activeSource.Play();
     }
 
+    public void PlayMusicWithFade(AudioClip newClip, float transitionTime = 1.0f)
+    {
+        // Determine which source is active
+        AudioSource activeSource = (firstMusicSourceIsPlaying) ? musicSource : musicSource2; // ? = true : = false
+
+        StartCoroutine(UpdateMusicWithFade(activeSource, newClip, transitionTime));
+    }
+
+    public void PlayMusicWithCrossFade(AudioClip musicClip, float transitionTime = 1.0f)
+    {
+        // Determine which source is active
+        AudioSource activeSource = (firstMusicSourceIsPlaying) ? musicSource : musicSource2;
+        AudioSource newSource = (firstMusicSourceIsPlaying) ? musicSource2 : musicSource;
+
+        // Swap the source
+        firstMusicSourceIsPlaying = !firstMusicSourceIsPlaying;
+
+        // Set the fields of the audio source, then start the coroutine to crossfade
+        newSource.clip = musicClip;
+        newSource.Play();
+        StartCoroutine(UpdateMusicWithCrossFade(activeSource, newSource, transitionTime));
+    }
+
+    private IEnumerator UpdateMusicWithFade(AudioSource activeSource, AudioClip newClip, float transitionTime)
+    {
+        // Make sure the source is active and playing
+        if (!activeSource.isPlaying)
+        {
+            activeSource.Play();
+        }
+
+        float t = 0.04f; // Transition float
+
+        // Fade out
+        for (t = 0; t < transitionTime; t += Time.deltaTime)
+        {
+            activeSource.volume = (1 - (t / transitionTime)); // Volume starts at 1 then gets reduced every second
+            yield return null;
+        }
+
+        // Change song
+        activeSource.Stop();
+        activeSource.clip = newClip;
+        activeSource.Play();
+
+        // Fade in
+        for (t = 0; t < transitionTime; t += Time.deltaTime)
+        {
+            activeSource.volume = (t / transitionTime); // Will be equal to 1 once done with transitionTime
+            yield return null;
+        }
+    }
+
+    private IEnumerator UpdateMusicWithCrossFade(AudioSource original, AudioSource newSource, float transitionTime)
+    {
+        float t = 0.0f; // Transition float
+
+        for (t = 0.0f; t <= transitionTime; t += Time.deltaTime)
+        {
+            // Set fade in and fade out on both sources
+            original.volume = (1 - (t / transitionTime));
+            newSource.volume = (t / transitionTime); 
+            yield return null;
+        }
+
+        original.Stop();
+    }
+
     public void PlaySFX(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip); // PlayOneShot doesn't clip any existing audio
@@ -60,5 +128,17 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip, float volume)
     {
         sfxSource.PlayOneShot(clip, volume);
+    }
+
+    // Will be used to set volume in settings, among other things
+    public void SetMusicVolume(float volume)
+    {
+        musicSource.volume = volume;
+        musicSource2.volume = volume;
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        sfxSource.volume = volume;
     }
 }
