@@ -155,6 +155,7 @@ public class DialogueManager : MonoBehaviour
                 case OBSERVATION_TAG:
                     if (tagValue == "empty")
                     {
+                        // find a way to split lines here
                         observationsText.text = "";
                         infoPanel.SetActive(false);
                         break;
