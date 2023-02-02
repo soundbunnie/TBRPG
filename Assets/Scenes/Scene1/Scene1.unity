@@ -13187,8 +13187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25c0b929903ac347ad4687e8e96994c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  passCheckSFX: {fileID: 8300000, guid: 13f5469ff0cf6c04782eb7649b24c68f, type: 3}
-  failCheckSFX: {fileID: 8300000, guid: 95cae6e021b2c644fbf6cd105996ebcf, type: 3}
+  passCheckSFX: {fileID: 8300000, guid: e76caa2da7f29e8419780e4a35a0ed05, type: 3}
+  failCheckSFX: {fileID: 8300000, guid: dfb7a7e7a767efd478ab22063f273baa, type: 3}
   music1: {fileID: 8300000, guid: 84f014d487e22644ca91e459979b73d2, type: 3}
   music2: {fileID: 8300000, guid: 43f689edbf8823c4ea4f9b7a7d59a2de, type: 3}
 --- !u!1 &2057536427
