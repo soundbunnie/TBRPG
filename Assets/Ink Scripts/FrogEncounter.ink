@@ -35,4 +35,4 @@ What do you do? #portraitImg: frog_dude_neutral
     + [(next) Nothing]
         All right then.
 End of encounter. #playSFX: encounterWin
--> encounterFrog
+-> DONE

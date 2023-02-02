@@ -190,8 +190,9 @@ STAT BLOCKS
 VAR to_pass = ()
 VAR passed = ()
 ~ passed = false // Set passed to false every time this function is called
-// Formula for claculating dice roll
+// Formula for calculating dice roll
 ~ temp dice_roll = RANDOM(1, 20) + stat // note: this will have to be changed as the system becomes more complicated
+// idea for dice roll: RANDOM(1, 20) + bonus - negative, bonus being the players proficiency bonuses and whatnot and negative being the enemies susceptibility to the roll
 {difficulty: // note: could the roll difficulty parameters be set somewhere else?
 - "Easy": ~ to_pass = 2
 - "Medium": ~ to_pass = 12
