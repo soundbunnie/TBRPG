@@ -189,9 +189,9 @@ STAT BLOCKS
 === function stat_check(stat, difficulty) === // might need to seperate this into different files once enemy AI is introduced
 VAR to_pass = ()
 VAR passed = ()
-~ passed = false
-~ temp dice_roll = RANDOM(1, 20) + stat
-{difficulty:
+~ passed = false // Set passed to false every time this function is called
+~ temp dice_roll = RANDOM(1, 20) + stat // note: this will have to be changed as the system becomes more complicated
+{difficulty: // note: could the roll difficulty parameters be set somewhere else?
 - "Easy": ~ to_pass = 2
 - "Medium": ~ to_pass = 12
 - "Hard": ~ to_pass = 16
