@@ -35,6 +35,7 @@ public class DialogueManager : MonoBehaviour
     private const string OBSERVATION_TAG = "observations";
     private const string PORTRAIT_TEXT = "portraitText";
     private const string PORTRAIT_IMG = "portraitImg";
+    private const string MUSIC_TAG = "playMusic";
 
     private Story currentStory;
 
@@ -183,6 +184,23 @@ public class DialogueManager : MonoBehaviour
                         portraitAnimator.Play(tagValue);
                         break;
                     }
+                case MUSIC_TAG:
+                    if (tagValue == "menuMusic")
+                    {
+                        AudioManagerTest.GetInstance().PlayMenuMusic();
+                        break;
+                    }
+                    if (tagValue == "battleMusic")
+                    {
+                        AudioManagerTest.GetInstance().PlayBattleMusic();
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
                     break;

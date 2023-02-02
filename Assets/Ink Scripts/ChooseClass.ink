@@ -1,6 +1,7 @@
 INCLUDE Globals\globals.ink
 
 === choose_class ===
+#playMusic: menuMusic
 #observations: empty
 #portraitImg: none
 {set_default_stats()}

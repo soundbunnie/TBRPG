@@ -17,8 +17,6 @@ MonoBehaviour:
   description: 
   preview: {fileID: 0}
   dependencies:
-  - dependency: {fileID: 7400000, guid: d3d87dda8be3fe543b8d9fb3f3f861a2, type: 2}
-    instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 3028dc075ba8c584d9bc7d1e0255e038, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: 44b322580a8342f42a6b955fba234946, type: 3}
@@ -26,6 +24,8 @@ MonoBehaviour:
   - dependency: {fileID: 2800000, guid: 2fd6421f253b4ef1a19526541f9ffc0c, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 8300000, guid: 95cae6e021b2c644fbf6cd105996ebcf, type: 3}
     instantiationMode: 1
   - dependency: {fileID: 2800000, guid: 0b33fa0d71d74ef4f86922a2c0d20f01, type: 3}
     instantiationMode: 0
@@ -39,8 +39,12 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 2800000, guid: cb2d6ac3028c3bf428582bb301aee373, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 8300000, guid: 43f689edbf8823c4ea4f9b7a7d59a2de, type: 3}
+    instantiationMode: 1
   - dependency: {fileID: 2800000, guid: ee148e281f3c41c5b4ff5f8a5afe5a6c, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 8300000, guid: 84f014d487e22644ca91e459979b73d2, type: 3}
+    instantiationMode: 1
   - dependency: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 7400000, guid: 69b97df9ef4c32448a28cdb4802c711f, type: 2}
@@ -49,8 +53,6 @@ MonoBehaviour:
     instantiationMode: 1
   - dependency: {fileID: 4900000, guid: b04ea571663e324448e82d36ed8c175b, type: 3}
     instantiationMode: 1
-  - dependency: {fileID: 2800000, guid: f359a3d78bea7f7488f50506b3647e82, type: 3}
-    instantiationMode: 0
   - dependency: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
     instantiationMode: 1
   - dependency: {fileID: -944628639613478452, guid: d6df1df1a9a3a194f9b80f2bab7d4a24, type: 3}
