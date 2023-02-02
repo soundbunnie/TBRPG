@@ -216,6 +216,11 @@ public class DialogueManager : MonoBehaviour
                         AudioManagerTest.GetInstance().PlayFailSFX();
                         break;
                     }
+                    if (tagValue == "yay")
+                    {
+                        AudioManagerTest.GetInstance().playYaySFX();
+                        break;
+                    }
                     else
                     {
                         break;

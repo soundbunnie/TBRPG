@@ -8,6 +8,7 @@ public class AudioManagerTest : MonoBehaviour
 
     [SerializeField] private AudioClip passCheckSFX;
     [SerializeField] private AudioClip failCheckSFX;
+    [SerializeField] private AudioClip yaySFX;
     [SerializeField] private AudioClip music1;
     [SerializeField] private AudioClip music2;
 
@@ -46,6 +47,11 @@ public class AudioManagerTest : MonoBehaviour
     public void PlayFailSFX()
     {
         AudioManager.Instance.PlaySFX(failCheckSFX, 0.1f);
+    }
+
+    public void playYaySFX()
+    {
+        AudioManager.Instance.PlaySFX(yaySFX, 0.2f);
     }
 
     public void TransitionMenuToBattleMusic()

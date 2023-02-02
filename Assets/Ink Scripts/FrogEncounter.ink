@@ -26,7 +26,7 @@ What do you do? #portraitImg: frog_dude_neutral
         }
         -> encounterFrogActions
     + [Pet him]
-        He's bursting with energy now! #portraitImg: frog_dude_happy
+        He's bursting with energy now! #portraitImg: frog_dude_happy #playSFX: yay
         -> encounterFrogActions
     + [Nothing]
         All right then.
