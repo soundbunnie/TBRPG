@@ -148,7 +148,7 @@ public class DialogueManager : MonoBehaviour
             }
             string tagKey = splitTag[0].Trim();
             string tagValue = splitTag[1].Trim();
-
+            #region Tags
             // handle the tag
             switch (tagKey)
             {
@@ -204,12 +204,11 @@ public class DialogueManager : MonoBehaviour
                     {
                         break;
                     }
-
-
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
                     break;
             }
+            #endregion
         }
     }
 
