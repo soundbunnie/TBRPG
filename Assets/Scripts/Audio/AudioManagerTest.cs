@@ -6,7 +6,8 @@ public class AudioManagerTest : MonoBehaviour
 {
     private static AudioManagerTest instance;
 
-    [SerializeField] private AudioClip buttonClipSFX;
+    [SerializeField] private AudioClip passCheckSFX;
+    [SerializeField] private AudioClip failCheckSFX;
     [SerializeField] private AudioClip music1;
     [SerializeField] private AudioClip music2;
 
@@ -35,6 +36,16 @@ public class AudioManagerTest : MonoBehaviour
     {
         AudioManager.Instance.PlayMusic(music2);
         AudioManager.Instance.SetMusicVolume(0.1f);
+    }
+    
+    public void PlayPassSFX()
+    {
+        AudioManager.Instance.PlaySFX(passCheckSFX, 0.1f);
+    }
+
+    public void PlayFailSFX()
+    {
+        AudioManager.Instance.PlaySFX(failCheckSFX, 0.1f);
     }
 
     public void TransitionMenuToBattleMusic()

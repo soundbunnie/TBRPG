@@ -36,6 +36,7 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_TEXT = "portraitText";
     private const string PORTRAIT_IMG = "portraitImg";
     private const string MUSIC_TAG = "playMusic";
+    private const string SFX_TAG = "playSFX";
 
     private Story currentStory;
 
@@ -198,6 +199,21 @@ public class DialogueManager : MonoBehaviour
                     if (tagValue == "menuToBattleMusic")
                     {
                         AudioManagerTest.GetInstance().TransitionMenuToBattleMusic(); // Problem with music2 volume always being max
+                        break;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                case SFX_TAG:
+                    if (tagValue == "stat_check_pass")
+                    {
+                        AudioManagerTest.GetInstance().PlayPassSFX();
+                        break;
+                    }
+                    if (tagValue == "stat_check_fail")
+                    {
+                        AudioManagerTest.GetInstance().PlayFailSFX();
                         break;
                     }
                     else
