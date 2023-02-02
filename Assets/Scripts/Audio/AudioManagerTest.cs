@@ -39,8 +39,7 @@ public class AudioManagerTest : MonoBehaviour
 
     public void TransitionMenuToBattleMusic()
     {
-        AudioManager.Instance.PlayMusicWithFade(music2, 0.5f);
-        AudioManager.Instance.SetMusicVolume(0.1f);
+        AudioManager.Instance.PlayMusicWithFade(music2, 0.5f, 0.1f);
     }
 
     // Examples of how to use

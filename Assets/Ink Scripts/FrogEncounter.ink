@@ -1,7 +1,7 @@
 INCLUDE ChooseClass.ink
 -> choose_class
 === encounterFrog ===
-You encounter a frog! #portraitText:Frog #portraitImg: frog_dude_neutral  #playMusic: battleMusic
+You encounter a frog! #portraitText:Frog #portraitImg: frog_dude_neutral  #playMusic: menuToBattleMusic
 He seems like a very good boy.
 -> encounterFrogActions
 

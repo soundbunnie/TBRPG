@@ -66,12 +66,12 @@ public class AudioManager : MonoBehaviour
         activeSource.Play();
     }
 
-    public void PlayMusicWithFade(AudioClip newClip, float transitionTime = 1.0f)
+    public void PlayMusicWithFade(AudioClip newClip, float transitionTime = 1.0f, float volume = 1.0f)
     {
         // Determine which source is active
         AudioSource activeSource = (firstMusicSourceIsPlaying) ? musicSource : musicSource2; // ? = true : = false
 
-        StartCoroutine(UpdateMusicWithFade(activeSource, newClip, transitionTime));
+        StartCoroutine(UpdateMusicWithFade(activeSource, newClip, transitionTime, volume));
     }
 
     public void PlayMusicWithCrossFade(AudioClip musicClip, float transitionTime = 1.0f)
@@ -89,7 +89,7 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(UpdateMusicWithCrossFade(activeSource, newSource, transitionTime));
     }
 
-    private IEnumerator UpdateMusicWithFade(AudioSource activeSource, AudioClip newClip, float transitionTime)
+    private IEnumerator UpdateMusicWithFade(AudioSource activeSource, AudioClip newClip, float transitionTime, float volume)
     {
         // Make sure the source is active and playing
         if (!activeSource.isPlaying)
@@ -102,7 +102,7 @@ public class AudioManager : MonoBehaviour
         // Fade out
         for (t = 0; t < transitionTime; t += Time.deltaTime)
         {
-            activeSource.volume = (1 - (t / transitionTime)); // Volume starts at 1 then gets reduced every second
+            activeSource.volume = (volume - ((t / transitionTime) * volume)); // Volume starts at 1 then gets reduced every second
             yield return null;
         }
 
@@ -114,7 +114,7 @@ public class AudioManager : MonoBehaviour
         // Fade in
         for (t = 0; t < transitionTime; t += Time.deltaTime)
         {
-            activeSource.volume = (t / transitionTime); // Will be equal to 1 once done with transitionTime
+            activeSource.volume = (t / transitionTime) * volume; // Will be equal to 1 once done with transitionTime
             yield return null;
         }
     }
