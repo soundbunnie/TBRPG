@@ -1,5 +1,6 @@
 INCLUDE ChooseClass.ink
--> choose_class
+// Divert to choose class so the player starts there
+-> choose_class // note: this script needs access to global variables and including globals.ink more than once creates everything contained in it twice. for now, every ink script will include chooseclass
 === encounterFrog ===
 You encounter a frog! #portraitText:Frog #portraitImg: frog_dude_neutral  #playMusic: menuToBattleMusic
 He seems like a very good boy.
@@ -7,6 +8,7 @@ He seems like a very good boy.
 
 === encounterFrogActions ===
 What do you do? #portraitImg: frog_dude_neutral
+// to do: the non-sticky stat checks disappear from the choices menu after they've been chosen. this is a little bit visually unappealing, find a way to keep the option there but unselectable and differently colored
     * [\[PERCEPTION\] I'd like to understand him more. I take a moment to see what I can discern.]
         {stat_check(Perception, "Easy")}
         {passed:
