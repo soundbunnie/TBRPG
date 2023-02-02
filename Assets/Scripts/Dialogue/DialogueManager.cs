@@ -195,6 +195,11 @@ public class DialogueManager : MonoBehaviour
                         AudioManagerTest.GetInstance().PlayBattleMusic();
                         break;
                     }
+                    if (tagValue == "menuToBattleMusic")
+                    {
+                        AudioManagerTest.GetInstance().TransitionMenuToBattleMusic(); // Problem with music2 volume always being max
+                        break;
+                    }
                     else
                     {
                         break;

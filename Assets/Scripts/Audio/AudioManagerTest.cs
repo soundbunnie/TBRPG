@@ -37,6 +37,12 @@ public class AudioManagerTest : MonoBehaviour
         AudioManager.Instance.SetMusicVolume(0.1f);
     }
 
+    public void TransitionMenuToBattleMusic()
+    {
+        AudioManager.Instance.PlayMusicWithFade(music2, 0.5f);
+        AudioManager.Instance.SetMusicVolume(0.1f);
+    }
+
     // Examples of how to use
 
     // AudioManager.Instance.PlaySFX(buttonClickSFX, 1)
