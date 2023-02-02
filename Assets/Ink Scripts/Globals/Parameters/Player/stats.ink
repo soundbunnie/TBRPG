@@ -186,7 +186,7 @@ STAT BLOCKS
 ~ ReactionSpeed = (1)
 ~ History = (1)
 
-=== function stat_check(stat, difficulty) ===
+=== function stat_check(stat, difficulty) === // might need to seperate this into different files once enemy AI is introduced
 VAR to_pass = ()
 VAR passed = ()
 ~ passed = false
