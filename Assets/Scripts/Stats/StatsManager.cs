@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StatsManager : MonoBehaviour
 {
+    // this is redundant for now, as stats are being handled in ink code
     Dictionary<string, int> playerStats = new Dictionary<string, int>()
     {
         // Physical Stats
