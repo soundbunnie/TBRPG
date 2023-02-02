@@ -285,6 +285,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayChoices()
     {
+        // to test: an option will have the selected option color seemingly at random. wtf???
         List<Choice> currentChoices = currentStory.currentChoices;
 
         // Defensive check to make sure our UI can support the number of choices coming in

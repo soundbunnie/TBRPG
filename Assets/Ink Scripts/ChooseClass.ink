@@ -18,7 +18,7 @@ After some exposition, or dialogue, or something, it's time to decide who you ar
     ~ player_class = "Warrior"
     {set_warrior_stats()}
     What do you fight for?
-    + [I fight for myself. The thrill of an honourable fight keeps me sane.] -> encounterFrog // Putting the divert on the same line for some reason stops unity from putting out a blank line before diverting
+    + [I fight for myself. The thrill of an honourable fight keeps me sane.] -> encounterFrog // note: putting the divert on the same line for some reason stops unity from putting out a blank line before diverting
     + [I fight for power and status. Being able to step on the backs of others to get to the top means that I was stronger.] -> encounterFrog
     + [I fight to survive. Picking locks is a waste of time when I can just break down the door.] -> encounterFrog
     + [I fight to protect those who cannot defend themselves. Making somebodys life a little bit better makes me feel like I've earned my place in this world.] -> encounterFrog

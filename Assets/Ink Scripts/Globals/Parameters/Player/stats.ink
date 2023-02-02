@@ -190,6 +190,7 @@ STAT BLOCKS
 VAR to_pass = ()
 VAR passed = ()
 ~ passed = false // Set passed to false every time this function is called
+// Formula for claculating dice roll
 ~ temp dice_roll = RANDOM(1, 20) + stat // note: this will have to be changed as the system becomes more complicated
 {difficulty: // note: could the roll difficulty parameters be set somewhere else?
 - "Easy": ~ to_pass = 2
