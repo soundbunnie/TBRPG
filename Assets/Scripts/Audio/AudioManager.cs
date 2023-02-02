@@ -66,6 +66,14 @@ public class AudioManager : MonoBehaviour
         activeSource.Play();
     }
 
+    public void StopMusic()
+    {
+        // Determine which source is active
+        AudioSource activeSource = (firstMusicSourceIsPlaying) ? musicSource : musicSource2; // ? = true : = false
+
+        activeSource.Stop();
+    }
+
     public void PlayMusicWithFade(AudioClip newClip, float transitionTime = 1.0f, float volume = 1.0f)
     {
         // Determine which source is active

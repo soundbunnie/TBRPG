@@ -32,7 +32,7 @@ What do you do? #portraitImg: frog_dude_neutral
     + [Pet him]
         He's bursting with energy now! #portraitImg: frog_dude_happy #playSFX: yay
         -> encounterFrogActions
-    + [Nothing]
+    + [(next) Nothing]
         All right then.
-End of encounter.
--> END
+End of encounter. #playSFX: encounterWin
+-> encounterFrog

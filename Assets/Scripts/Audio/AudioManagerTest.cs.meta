@@ -3,7 +3,12 @@ guid: f25c0b929903ac347ad4687e8e96994c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - passCheckSFX: {instanceID: 0}
+  - failCheckSFX: {instanceID: 0}
+  - yaySFX: {instanceID: 0}
+  - menuMusic: {fileID: 8300000, guid: 84f014d487e22644ca91e459979b73d2, type: 3}
+  - battleMusic: {fileID: 8300000, guid: 43f689edbf8823c4ea4f9b7a7d59a2de, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

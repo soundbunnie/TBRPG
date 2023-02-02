@@ -13190,8 +13190,9 @@ MonoBehaviour:
   passCheckSFX: {fileID: 8300000, guid: e76caa2da7f29e8419780e4a35a0ed05, type: 3}
   failCheckSFX: {fileID: 8300000, guid: dfb7a7e7a767efd478ab22063f273baa, type: 3}
   yaySFX: {fileID: 8300000, guid: e313266f4b333a949959c06642f05faa, type: 3}
-  music1: {fileID: 8300000, guid: 84f014d487e22644ca91e459979b73d2, type: 3}
-  music2: {fileID: 8300000, guid: 43f689edbf8823c4ea4f9b7a7d59a2de, type: 3}
+  menuMusic: {fileID: 8300000, guid: 84f014d487e22644ca91e459979b73d2, type: 3}
+  battleMusic: {fileID: 8300000, guid: 43f689edbf8823c4ea4f9b7a7d59a2de, type: 3}
+  encounterWinSFX: {fileID: 8300000, guid: 5c2ee04e460057047900e3b773cd8bf7, type: 3}
 --- !u!1 &2057536427
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,22 +16,22 @@ public class CharacterMenu : MonoBehaviour
         MenuManager.OpenMenu(Menu.GAME_MENU, gameObject);
     }
 
-    private void Update()
-    {
-        var skills = ((Ink.Runtime.ListValue)DialogueManager
-            .GetInstance()
-            .GetVariableState("Skills")).value;
+    //private void Update()
+    //{
+       // var skills = ((Ink.Runtime.ListValue)DialogueManager
+          //  .GetInstance()
+          //  .GetVariableState("Skills")).value;
 
-        var proficiencies = ((Ink.Runtime.ListValue)DialogueManager
-            .GetInstance()
-            .GetVariableState("Proficiencies")).value;
+     //   var proficiencies = ((Ink.Runtime.ListValue)DialogueManager
+          //  .GetInstance()
+          //  .GetVariableState("Proficiencies")).value;
 
-        var player_class = ((Ink.Runtime.StringValue)DialogueManager
-            .GetInstance()
-            .GetVariableState("player_class")).value;
+    //    var player_class = ((Ink.Runtime.StringValue)DialogueManager
+         //   .GetInstance()
+         //   .GetVariableState("player_class")).value;
 
-        SkillsList.text = skills.ToString();
-        ProficienciesList.text = proficiencies.ToString();
-    }
+     //   SkillsList.text = skills.ToString();
+     //   ProficienciesList.text = proficiencies.ToString();
+    //}
 }
 

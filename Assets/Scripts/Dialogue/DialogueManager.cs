@@ -224,6 +224,11 @@ public class DialogueManager : MonoBehaviour
                         AudioManagerTest.GetInstance().playYaySFX();
                         break;
                     }
+                    if (tagValue == "encounterWin")
+                    {
+                        AudioManagerTest.GetInstance().WinEncounterSFX();
+                        break;
+                    }
                     else
                     {
                         break;
