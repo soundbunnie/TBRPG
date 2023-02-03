@@ -1,4 +1,5 @@
 INCLUDE Globals\globals.ink
+// Needs to include globals because this is the first scene
 
 === choose_class ===
 #playMusic: menuMusic

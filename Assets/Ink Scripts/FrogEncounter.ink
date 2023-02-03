@@ -1,4 +1,3 @@
-INCLUDE ChooseClass.ink
 // Divert to choose class so the player starts there
 -> choose_class // note: this script needs access to global variables and including globals.ink more than once creates everything contained in it twice. for now, every ink script will include chooseclass
 === encounterFrog ===
