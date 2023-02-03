@@ -10,6 +10,7 @@ public class TabGroup : MonoBehaviour
     public Sprite tabHover;
     public Sprite tabActive;
     public TabButton selectedTab;
+    public List<GameObject> objectsToSwap;
 
     public void Subscribe(TabButton button)
     {
@@ -40,6 +41,19 @@ public class TabGroup : MonoBehaviour
         selectedTab = button;
         ResetTabs();
         button.background.sprite = tabActive;
+        int index = button.transform.GetSiblingIndex(); // Index of pages should match the index of the tabs
+        for(int i = 0; i < objectsToSwap.Count; i++)
+        {
+            // Set page to active if it's the index, if not, set it to inactive
+            if (i == index)
+            {
+                objectsToSwap[i].SetActive(true);
+            }
+            else
+            {
+                objectsToSwap[i].SetActive(false);
+            }
+        }
     }
 
     public void ResetTabs()
