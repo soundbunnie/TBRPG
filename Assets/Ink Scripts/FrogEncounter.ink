@@ -1,5 +1,3 @@
-// Divert to choose class so the player starts there
--> choose_class // note: this script needs access to global variables and including globals.ink more than once creates everything contained in it twice. for now, every ink script will include chooseclass
 === encounterFrog ===
 You encounter a frog! #portraitText:Frog #portraitImg: frog_dude_neutral  #playMusic: menuToBattleMusic
 He seems like a very good boy.
@@ -34,4 +32,4 @@ What do you do? #portraitImg: frog_dude_neutral
     + [(next) Nothing]
         All right then.
 End of encounter. #playSFX: encounterWin
--> DONE
+-> test
