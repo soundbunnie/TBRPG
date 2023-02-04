@@ -6,6 +6,7 @@ public static class MenuManager
 {
     public static bool IsInitialized { get; private set; }
     public static GameObject gameMenu,
+        menusPanel,
         codexMenu,
         locationMenu,
         settingsMenu,
@@ -20,6 +21,7 @@ public static class MenuManager
     {
         GameObject canvas = GameObject.Find("Canvas");
         GameObject menus = GameObject.Find("Menus");
+        menusPanel = menus.transform.Find("MenusPanel").gameObject;
         gameMenu = menus.transform.Find("GameMenu").gameObject;
         codexMenu = menus.transform.Find("CodexMenu").gameObject;
         locationMenu = menus.transform.Find("LocationMenu").gameObject;
@@ -73,7 +75,9 @@ public static class MenuManager
                 statsMenu.SetActive(true);
                 break;
         }
-
-        callingMenu.SetActive(false);
+        if (callingMenu != menusPanel)
+        {
+            callingMenu.SetActive(false);
+        }
     }
 }
