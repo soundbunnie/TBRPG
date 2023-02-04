@@ -4,12 +4,16 @@ using UnityEngine;
 using Ink.Runtime;
 using TMPro;
 
-public class GameMenu : MonoBehaviour
+public class MenusPanel : MonoBehaviour
 {
     //[SerializeField] private TextMeshProUGUI PlayerTitleText;
     public void OnClick_Location()
     {
         MenuManager.OpenMenu(Menu.LOCATION_MENU, gameObject);
+    }
+    public void OnClick_Codex()
+    {
+        MenuManager.OpenMenu(Menu.CODEX_MENU, gameObject);
     }
     public void OnClick_Settings()
     {
@@ -45,12 +49,4 @@ public class GameMenu : MonoBehaviour
     {
         MenuManager.OpenMenu(Menu.STATS_MENU, gameObject);
     }
-
-   // private void Update()
-    //{
-     //   var player_title = ((Ink.Runtime.StringValue)DialogueManager
-     //       .GetInstance()
-      //      .GetVariableState("player_title")).value;
-      //  PlayerTitleText.text = player_title.ToString();
-   // }
 }

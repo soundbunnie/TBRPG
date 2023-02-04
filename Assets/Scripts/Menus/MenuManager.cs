@@ -6,6 +6,7 @@ public static class MenuManager
 {
     public static bool IsInitialized { get; private set; }
     public static GameObject gameMenu,
+        codexMenu,
         locationMenu,
         settingsMenu,
         saveMenu,
@@ -20,6 +21,7 @@ public static class MenuManager
         GameObject canvas = GameObject.Find("Canvas");
         GameObject menus = GameObject.Find("Menus");
         gameMenu = menus.transform.Find("GameMenu").gameObject;
+        codexMenu = menus.transform.Find("CodexMenu").gameObject;
         locationMenu = menus.transform.Find("LocationMenu").gameObject;
         settingsMenu = menus.transform.Find("SettingsMenu").gameObject;
         saveMenu = menus.transform.Find("SaveMenu").gameObject;
@@ -42,6 +44,9 @@ public static class MenuManager
         {
             case Menu.GAME_MENU:
                 gameMenu.SetActive(true);
+                break;
+            case Menu.CODEX_MENU:
+                codexMenu.SetActive(true);
                 break;
             case Menu.LOCATION_MENU:
                 locationMenu.SetActive(true);

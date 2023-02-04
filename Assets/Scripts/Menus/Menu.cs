@@ -2,6 +2,7 @@ public enum Menu
 {
     GAME_MENU,
     LOCATION_MENU,
+    CODEX_MENU,
     SETTINGS_MENU,
     SAVE_MENU,
     LOAD_MENU,
