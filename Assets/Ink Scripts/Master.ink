@@ -1,9 +1,13 @@
+/*
+GLOABALS
+*/
+
 INCLUDE Globals\globals.ink
 
 
-/* SCENES
+/* 
+SCENES
 */
--> choose_class
 // Scene 1
 INCLUDE ChooseClass.ink
 
@@ -12,3 +16,6 @@ INCLUDE FrogEncounter.ink
 
 // Scene 3
 INCLUDE Test.ink
+
+// Start game
+-> choose_class
