@@ -12,6 +12,7 @@ public class AudioManagerTest : MonoBehaviour
     [SerializeField] private AudioClip menuMusic;
     [SerializeField] private AudioClip battleMusic;
     [SerializeField] private AudioClip encounterWinSFX;
+    [SerializeField] private AudioClip pageTurnSFX;
 
     private void Awake()
     {
@@ -53,6 +54,10 @@ public class AudioManagerTest : MonoBehaviour
     public void playYaySFX()
     {
         AudioManager.Instance.PlaySFX(yaySFX, 0.2f);
+    }
+    public void PageTurnSFX()
+    {
+        AudioManager.Instance.PlaySFX(pageTurnSFX, 0.1f);
     }
 
     public void WinEncounterSFX()
