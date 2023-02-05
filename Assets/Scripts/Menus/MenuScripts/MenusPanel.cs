@@ -11,6 +11,10 @@ public class MenusPanel : MonoBehaviour
     {
         MenuManager.OpenMenu(Menu.LOCATION_MENU, gameObject);
     }
+    public void OnClick_Game()
+    {
+        MenuManager.OpenMenu(Menu.GAME_MENU, gameObject);
+    }
     public void OnClick_Codex()
     {
         MenuManager.OpenMenu(Menu.CODEX_MENU, gameObject);
@@ -42,7 +46,7 @@ public class MenusPanel : MonoBehaviour
 
     public void OnClick_Items()
     {
-        MenuManager.OpenMenu(Menu.ITEMS_MENU, gameObject);
+        MenuManager.OpenMenu(Menu.INVENTORY_MENU, gameObject);
     }
 
     public void OnClick_Stats()

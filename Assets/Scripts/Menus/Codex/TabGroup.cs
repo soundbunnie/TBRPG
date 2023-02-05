@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,27 @@ public class TabGroup : MonoBehaviour
     public List<TabButton> tabButtons;
     public Sprite tabIdle;
     public Sprite tabHover;
+
+    internal void Subscribe(Menus_Tab_Button menus_Tab_Button)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void OnTabSelected(Menus_Tab_Button menus_Tab_Button)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void OnTabEnter(Menus_Tab_Button menus_Tab_Button)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal void OnTabExit(Menus_Tab_Button menus_Tab_Button)
+    {
+        throw new NotImplementedException();
+    }
+
     public Sprite tabActive;
     public TabButton selectedTab;
     public List<GameObject> objectsToSwap;

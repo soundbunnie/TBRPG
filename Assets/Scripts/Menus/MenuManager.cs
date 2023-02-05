@@ -14,7 +14,7 @@ public static class MenuManager
         loadMenu,
         characterMenu,
         historyMenu,
-        itemsMenu,
+        inventoryMenu,
         statsMenu;
 
     public static void Init()
@@ -30,7 +30,7 @@ public static class MenuManager
         loadMenu = menus.transform.Find("LoadMenu").gameObject;
         characterMenu = menus.transform.Find("CharacterMenu").gameObject;
         historyMenu = menus.transform.Find("HistoryMenu").gameObject;
-        itemsMenu = menus.transform.Find("ItemsMenu").gameObject;
+        inventoryMenu = menus.transform.Find("InventoryMenu").gameObject;
         statsMenu = menus.transform.Find("StatsMenu").gameObject;
 
         IsInitialized = true;
@@ -68,8 +68,8 @@ public static class MenuManager
             case Menu.HISTORY_MENU:
                 historyMenu.SetActive(true);
                 break;
-            case Menu.ITEMS_MENU:
-                itemsMenu.SetActive(true);
+            case Menu.INVENTORY_MENU:
+                inventoryMenu.SetActive(true);
                 break;
             case Menu.STATS_MENU:
                 statsMenu.SetActive(true);

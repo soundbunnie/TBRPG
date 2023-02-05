@@ -8,6 +8,6 @@ public enum Menu
     LOAD_MENU,
     CHARACTER_MENU,
     HISTORY_MENU,
-    ITEMS_MENU,
+    INVENTORY_MENU,
     STATS_MENU
 }
