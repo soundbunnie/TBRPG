@@ -30,6 +30,9 @@ public class DialogueManager : MonoBehaviour
     [Header("Load Globals JSON")]
     [SerializeField] private TextAsset loadGlobalsJSON;
 
+    [Header("Log")]
+    [SerializeField] private TextMeshProUGUI logText;
+
     [Header("Ink tags")]
     private const string POPUP_TAG = "popup";
     private const string OBSERVATION_TAG = "observations";
@@ -281,8 +284,8 @@ public class DialogueManager : MonoBehaviour
                 speechText.maxVisibleCharacters++;
                 yield return new WaitForSeconds(typingSpeed);
             }
-
         }
+        AddToLog(line); // Add the line to the Log page after it's done displaying
         // Display choices, if any, for this dialogue line
         DisplayChoices();
         canContinueToNextLine = true;
@@ -330,6 +333,11 @@ public class DialogueManager : MonoBehaviour
             currentStory.ChooseChoiceIndex(choiceIndex);
             ContinueStory();
         }
+    }
+
+    private void AddToLog(string line)
+    {
+        logText.text += line;
     }
     public Ink.Runtime.Object GetVariableState(string variableName) // honestly i'm kind of confused as to how this works
     {
