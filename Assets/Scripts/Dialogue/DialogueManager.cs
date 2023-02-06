@@ -331,6 +331,8 @@ public class DialogueManager : MonoBehaviour
         if (canContinueToNextLine)
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
+            AddToLog(choicesText[choiceIndex].text); // Add chosen choice to log
+            AddToLog("\n"); // Add empty line
             ContinueStory();
         }
     }
