@@ -9,13 +9,14 @@ INCLUDE Globals\globals.ink
 SCENES
 */
 // Scene 1
-INCLUDE ChooseClass.ink
+INCLUDE Scenes\IntroScene.ink
+//INCLUDE ChooseClass.ink
 
 // Scene 2
-INCLUDE FrogEncounter.ink
+//INCLUDE FrogEncounter.ink
 
 // Scene 3
-INCLUDE Test.ink
+//INCLUDE Test.ink
 
 // Start game
--> choose_class
+-> forest_rathunt_scene
