@@ -4,7 +4,9 @@ The forest is quiet. The dewey blades of grass dance to a silent tune, interrupt
     * [There's something about this forest that is unsettling to me. I feel unsafe here.]-> forest_unsettling
     * [I take in the beauty all around me. It's peaceful.]->forest_beautiful
     * [This forest evokes no distinguishable feelings within me.]->forest_contd
-        
+    * [4th choices]->forest_contd
+    * [5th choices]->forest_contd
+    * [6th choices]->forest_contd
 = forest_unsettling
 There isn't much to look at, and your eyes seem to have picked out a single object to stare at - the tree closest to the trap. You've stared at it for so long that the lines of the bark have begun to form faces. You know it's mind playing tricks on you, but this only serves to worsen your discomfort.<br><br>-> forest_contd
 = forest_beautiful
