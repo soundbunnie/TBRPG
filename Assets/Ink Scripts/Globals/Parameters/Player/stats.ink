@@ -1,204 +1,94 @@
-/* 
-PLAYER STATS
-Min: 1
-Max: 5
-*/
-
-=== function initialize_stats() ===
 /*
-PHYSICAL STAT EXPLANATIONS:
-Health is just a standard point system. 
-    *Parametres will have to be tweaked
-Acrobatics affects the players ability to do things like climb, balance, jump, etc
-Strength affects the players ability to do things like lifting objects and busting down doors. 
-    *Split this into multiple stats (?)
-Foraging affects the players ability to collect herbs, foods, and alchemical ingredients
-*/
-// Physical stats
-VAR Health = (10)
-VAR Acrobatics = (1)
-VAR Strength = (1)
-VAR Foraging = (1)
-VAR Discerning = (1)
+Stats explanation
 
-/* 
-SNEAKY STAT EXPLANATIONS:
-Discerning is not to be confused with perception. Discerning affects the players ability to notice things in high pressure situations, such as noticing an enemy reaching for his knife.
-Stealth is the players general ability to hide and sneak around.
-Lockpicking affects the players ability to, well, lockpick.
-Sleight of hand affects the players ability to do things like plant or yoink something on someone/somewhere
-*/
-// Sneaky stats
-VAR Stealth = (1)
-VAR Lockpicking = (1)
-VAR SleightOfHand = (1)
+Strength // Ability to overcome obstacles using physical strength (i.e breaking down a door, forcing open a lock,)
+Dexterity // A higher dexterity means that you move better, more precisely, and are able to preform tasks that require nimbleness.
+Willpower // Your ability to persevere. A higher willpower means that you will be able to withstand pain, fear, emotions, etc...
+Intelligence // Your ability to reason, understand, and make connections.
+Influence // Your ability to influence others, be it by strength, deception, charm, etc...
+Perception // This influences your reaction time and your observation skills. Someone with a high perception will notice things that others do not.
 
-/*
-MENTAL STAT EXPLANATIONS:
-Influence is the players ability to influence and persuade others.
-Intimidation is the players ability to well, intimidate.
-Negotation is the players ability to bargain, barter, or persuade someone to let you off the hook
-Charm is the players likeability. Certain NPCs will treat them differently based on this stat.
-Empathy is the ability to understand peoples emotions through things such as body language, speech, etc.
-Logic is the players ability to reason and connect the dots between different points of knowledge.
-Willpower is the players ability to persevere when things get tough. Higher willpower means a higher tolerance to pain, emotional distress, etc.
-Introspection is the players ability to understand how they relate to the world around them. 
-    *This stat is on the chopping block, but it could be interesting.
-*/
-// Mental stats
-VAR Influence = (1)
-VAR Intimidation = (1)
-VAR Negotiation = (1)
-VAR Charm = (1)
-VAR Empathy = (1)
-VAR Logic = (1)
-VAR Willpower = (1)
-VAR Introspection = (1)
+each stats dice will increase as you put points into it (6, 8, 10, 12)
+there can be temporary stat dice increases
 
-/*
-PASSIVE STAT EXPLANATIONS:
-Perception is the ability to perceive things in normal situations, which is why this stat differs from discerning. The player is more prone to notice things like the change in weather or footsteps passively.
-Reaction speed is a way of providing an alternative to discerning/perception. Instead of being proactive, you can instead be reactive.
-History is the players knowledge of the world.
+dice can be rolled together. if you want to intimidate someone by physical means, you would roll strength + influence
+
 */
 
-// Passive stats
-VAR Perception = (1)
-VAR ReactionSpeed = (1)
-VAR History = (1)
-/*
-STAT BLOCKS
-*/
-
-=== function set_default_stats() ===
-//Physical stats
-~ Health = 10
-~ Acrobatics = 1
-~ Strength = 1
-~ Foraging = 1
-~ Discerning = 1
-
-// Sneaky stats
-~ Stealth = (1)
-~ Lockpicking = (1)
-~ SleightOfHand = (1)
-
-// Mental stats
-~ Influence = (1)
-~ Intimidation = (1)
-~ Negotiation = (1)
-~ Charm = (1)
-~ Empathy = (1)
-~ Logic = (1)
-~ Willpower = (1)
-~ Introspection = (1)
-
-
-// Passive stats
-~ Perception = (1)
-~ ReactionSpeed = (1)
-~ History = (1)
-
-=== function set_warrior_stats() ===
-//Physical stats
-~ Health = (10)
-~ Acrobatics = (1)
-~ Strength = (1)
-~ Foraging = (1)
-~ Discerning = (1)
-
-// Sneaky stats
-~ Stealth = (1)
-~ Lockpicking = (1)
-~ SleightOfHand = (1)
-
-// Mental stats
-~ Influence = (1)
-~ Intimidation = (1)
-~ Negotiation = (1)
-~ Charm = (1)
-~ Empathy = (1)
-~ Logic = (1)
-~ Willpower = (1)
-~ Introspection = (1)
-
-
-// Passive stats
-~ Perception = (1)
-~ ReactionSpeed = (1)
-~ History = (1)
-
-=== function set_thief_stats() ===
-//Physical stats
-~ Health = (10)
-~ Acrobatics = (1)
-~ Strength = (1)
-~ Foraging = (1)
-~ Discerning = (1)
-
-// Sneaky stats
-~ Stealth = (1)
-~ Lockpicking = (1)
-~ SleightOfHand = (1)
-
-// Mental stats
-~ Influence = (1)
-~ Intimidation = (1)
-~ Negotiation = (1)
-~ Charm = (1)
-~ Empathy = (1)
-~ Logic = (1)
-~ Willpower = (1)
-~ Introspection = (1)
-
-
-// Passive stats
-~ Perception = (1)
-~ ReactionSpeed = (1)
-~ History = (1)
-
-=== function set_alchemist_stats===
-//Physical stats
-~ Health = (10)
-~ Acrobatics = (1)
-~ Strength = (1)
-~ Foraging = (1)
-~ Discerning = (1)
-
-// Sneaky stats
-~ Stealth = (1)
-~ Lockpicking = (1)
-~ SleightOfHand = (1)
-
-// Mental stats
-~ Influence = (1)
-~ Intimidation = (1)
-~ Negotiation = (1)
-~ Charm = (1)
-~ Empathy = (1)
-~ Logic = (1)
-~ Willpower = (1)
-~ Introspection = (1)
-
-
-// Passive stats
-~ Perception = (1)
-~ ReactionSpeed = (1)
-~ History = (1)
-
-=== function stat_check(stat, difficulty) === // might need to seperate this into different files once enemy AI is introduced
+// For stat checks
 VAR to_pass = ()
 VAR passed = ()
+
+=== function initialize_stats() ===
+VAR Strength = 1
+VAR Dexterity = 1
+VAR Willpower = 1
+VAR Intellignece = 1
+VAR Influence = 1
+VAR Perception = 1
+
+
+=== function set_default_stats() ===
+~ Strength = RANDOM(1, 6)
+~ Dexterity = RANDOM(1, 6)
+~ Willpower = RANDOM(1, 6)
+~ Intellignece = RANDOM(1, 6)
+~ Influence = RANDOM(1, 6)
+~ Perception = RANDOM(1, 6)
+
+=== function set_warrior_stats() ===
+~ Strength = RANDOM(1, 6)
+~ Dexterity = RANDOM(1, 6)
+~ Willpower = RANDOM(1, 6)
+~ Intellignece = RANDOM(1, 6)
+~ Influence = RANDOM(1, 6)
+~ Perception = RANDOM(1, 6)
+
+=== function set_thief_stats() ===
+~ Strength = RANDOM(1, 6)
+~ Dexterity = RANDOM(1, 6)
+~ Willpower = RANDOM(1, 6)
+~ Intellignece = RANDOM(1, 6)
+~ Influence = RANDOM(1, 6)
+~ Perception = RANDOM(1, 6)
+
+=== function set_alchemist_stats===
+~ Strength = RANDOM(1, 6)
+~ Dexterity = RANDOM(1, 6)
+~ Willpower = RANDOM(1, 6)
+~ Intellignece = RANDOM(1, 6)
+~ Influence = RANDOM(1, 6)
+~ Perception = RANDOM(1, 6)
+
+=== function stat_check_single(stat, difficulty) === // might need to seperate this into different files once enemy AI is introduced
 ~ passed = false // Set passed to false every time this function is called
 // Formula for calculating dice roll
-~ temp dice_roll = RANDOM(1, 20) + stat // note: this will have to be changed as the system becomes more complicated
-// idea for dice roll: RANDOM(1, 20) + bonus - negative, bonus being the players proficiency bonuses and whatnot and negative being the enemies susceptibility to the roll
+~ temp dice_roll = stat // note: this will have to be changed as the system becomes 
 {difficulty: // note: could the roll difficulty parameters be set somewhere else?
 - "Easy": ~ to_pass = 2
-- "Medium": ~ to_pass = 12
-- "Hard": ~ to_pass = 16
-- "Absurd": ~ to_pass = 21
+- "Medium": ~ to_pass = 4
+- "Hard": ~ to_pass = 6
+- "Absurd": ~ to_pass = 8
 }
-{dice_roll > to_pass:
+{dice_roll >= to_pass:
 ~ passed = true
 }
+{dice_roll}
+
+=== function stat_check_double(stat1, stat2, difficulty) === // might need to seperate this into different files once enemy AI is introduced
+~ passed = false // Set passed to false every time this function is called
+// Formula for calculating dice roll
+~ temp roll1 = stat1 
+~ temp roll2 = stat2
+~ temp dice_roll = roll1 + roll2
+{difficulty: // note: could the roll difficulty parameters be set somewhere else?
+- "Easy": ~ to_pass = 4
+- "Medium": ~ to_pass = 6
+- "Hard": ~ to_pass = 12
+- "Absurd": ~ to_pass = 18
+}
+{dice_roll >= to_pass:
+~ passed = true
+}
+
+{roll1} {roll2}
