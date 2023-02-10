@@ -26,6 +26,7 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
+    [SerializeField] private GameObject lineBreak;
     private TextMeshProUGUI[] choicesText;
 
     [Header("Load Globals JSON")]
@@ -304,6 +305,11 @@ public class DialogueManager : MonoBehaviour
                 + currentChoices.Count);
         }
 
+        if (currentChoices.Count != 0)
+        {
+            lineBreak.SetActive(true);
+        }
+
         int index = 0;
         // Enable and initialize the choices up to the amount of choices for this line of dialogue
         foreach (Choice choice in currentChoices)
@@ -325,6 +331,7 @@ public class DialogueManager : MonoBehaviour
         {
             choiceButton.SetActive(false);
         }
+        lineBreak.SetActive(false);
     }
 
     public void MakeChoice(int choiceIndex)
