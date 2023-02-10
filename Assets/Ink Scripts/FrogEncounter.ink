@@ -1,5 +1,3 @@
-INCLUDE Globals\globals.ink
--> encounterFrogActions
 === encounterFrog ===
 You encounter a frog! #portraitText:Frog #portraitImg: frog_dude_neutral  #playMusic: menuToBattleMusic
 He seems like a very good boy.
@@ -14,7 +12,7 @@ What do you do? #portraitImg: frog_dude_neutral
     * [\[PERCEPTION: EASY\] I'd like to understand him more. I take a moment to see what I can discern.]
         {stat_check_single(Perception, "Easy")}
         {passed:
-            [PERCEPTION: SUCCESS] Your keen senses allow you to observe a few things about the frog: His height, title, the essence of his soul, and his name. #observations:* ~3.5 in tall. * Seems to have a friendly disposition. #portraitText: Mr. Frog #playSFX: stat_check_pass
+            [PERCEPTION: SUCCESS] Your keen senses allow you to observe a few things about the frog: His height, title, the essence of his soul, and his name. #observations:* ~3.5 in tall.<br> * Seems to have a friendly disposition.<br> #portraitText: Mr. Frog #playSFX: stat_check_pass
         } 
         {not passed:
             [PERCEPTION: FAILED] You feel as if he's on a completely different world than you. #observations: * Possibly an alien. #playSFX: stat_check_fail
@@ -23,14 +21,14 @@ What do you do? #portraitImg: frog_dude_neutral
     * [\[DEXTERITY + INFLUENCE: HARD\] I want his friendship. I'll attempt to do a cool trick for him.]
         {stat_check_double(Dexterity, Influence, "Hard")}
         {passed:
-        [DEXTERITY + INFLUENCE: SUCCESS] You're able to do a cool trick for the frog. He is impressed. #portraitImg: frog_dude_happy #observations: * Likes cool tricks #playSFX: stat_check_pass
+        [DEXTERITY + INFLUENCE: SUCCESS] You're able to do a cool trick for the frog. He is impressed. #portraitImg: frog_dude_happy #observations: * Likes cool tricks<br> #playSFX: stat_check_pass
             }
         {not passed:
-            [DEXTERITY + INFLUENCE: FAILED] Your attempt has backfired. The frog interprets your actions as an act of racism. #observations: * Thinks you're racist. #playSFX: stat_check_fail
+            [DEXTERITY + INFLUENCE: FAILED] Your attempt has backfired. The frog interprets your actions as an act of racism. #observations: * Thinks you're racist.<br> #playSFX: stat_check_fail
         }
         -> encounterFrogActions
     + [Pet him]
-        He's bursting with energy now! #portraitImg: frog_dude_happy #playSFX: yay
+        He's bursting with energy now! #portraitImg: frog_dude_happy #playSFX: yay #observations: * AKOFWPKP<br>
         -> encounterFrogActions
     + [(next) Nothing]
         All right then.
