@@ -27,6 +27,7 @@ public class InputManager : MonoBehaviour
         if (context.performed)
         {
             submitPressed = true;
+            DialogueManager.GetInstance().TextAdvance();
         }
         else if (context.canceled)
         {
