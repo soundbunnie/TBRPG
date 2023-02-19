@@ -200,7 +200,7 @@ public class DialogueManager : MonoBehaviour
                     }
                 case STATCHECK_TAG:
                     tooltipContent = tagValue;
-                    Debug.Log(tagValue);
+                    //Debug.Log(tagValue);
                     break;
                 case MUSIC_TAG:
                     if (tagValue == "menuMusic")
@@ -323,9 +323,6 @@ public class DialogueManager : MonoBehaviour
         // Enable and initialize the choices up to the amount of choices for this line of dialogue
         foreach (Choice choice in currentChoices)
         {
-           List<string> choiceTags = currentStory.currentTags;
-           HandleTags(choiceTags);
-
             choices[index].gameObject.SetActive(true);
             choicesText[index].text = (index + 1) + ". " + choice.text;
             if (!string.IsNullOrEmpty(tooltipContent))
