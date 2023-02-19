@@ -19,7 +19,7 @@ public class AudioManagerTest : MonoBehaviour
         #region Static Instance
         if (instance != null)
         {
-            Debug.LogWarning("Found more than one Dialogue Manager in the scene.");
+            Debug.LogWarning("Found more than one Audio Manager Test in the scene.");
         }
         instance = this;
         #endregion

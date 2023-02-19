@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Ink tags")]
     private const string POPUP_TAG = "popup";
     private const string OBSERVATION_TAG = "observations";
+    private const string STATCHECK_TAG = "statCheck";
     private const string PORTRAIT_TEXT = "portraitText";
     private const string PORTRAIT_IMG = "portraitImg";
     private const string MUSIC_TAG = "playMusic";
@@ -50,6 +51,10 @@ public class DialogueManager : MonoBehaviour
     private bool textAdvancePressed;
 
     private bool canContinueToNextLine = false;
+
+    private string tooltipHeader;
+
+    private string tooltipContent;
 
     private Coroutine displayLineCoroutine;
 
@@ -193,6 +198,10 @@ public class DialogueManager : MonoBehaviour
                         portraitAnimator.Play(tagValue); // to test: game might crash if this throws an error
                         break;
                     }
+                case STATCHECK_TAG:
+                    tooltipContent = tagValue;
+                    Debug.Log(tagValue);
+                    break;
                 case MUSIC_TAG:
                     if (tagValue == "menuMusic")
                     {
@@ -314,8 +323,16 @@ public class DialogueManager : MonoBehaviour
         // Enable and initialize the choices up to the amount of choices for this line of dialogue
         foreach (Choice choice in currentChoices)
         {
+           List<string> choiceTags = currentStory.currentTags;
+           HandleTags(choiceTags);
+
             choices[index].gameObject.SetActive(true);
             choicesText[index].text = (index + 1) + ". " + choice.text;
+            if (!string.IsNullOrEmpty(tooltipContent))
+            {
+                choices[index].gameObject.GetComponent<TooltipTrigger>().AddTooltip(tooltipContent);
+            }
+
             index++;
         }
         // Go through the remaining choices the UI supports and make sure they're hidden
