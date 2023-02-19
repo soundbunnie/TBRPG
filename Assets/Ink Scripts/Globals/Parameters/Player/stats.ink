@@ -90,5 +90,4 @@ VAR Perception = 1
 {dice_roll >= to_pass:
 ~ passed = true
 }
-
 {roll1} {roll2}

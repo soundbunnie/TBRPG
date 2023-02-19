@@ -323,13 +323,15 @@ public class DialogueManager : MonoBehaviour
         // Enable and initialize the choices up to the amount of choices for this line of dialogue
         foreach (Choice choice in currentChoices)
         {
-            choices[index].gameObject.SetActive(true);
-            choicesText[index].text = (index + 1) + ". " + choice.text;
-            if (!string.IsNullOrEmpty(tooltipContent))
+            choices[index].gameObject.GetComponent<TooltipTrigger>().RemoveTooltip();
+            List<string> choiceTags = choice.tags;
+            if (choiceTags != null)
             {
+                HandleTags(choiceTags);
                 choices[index].gameObject.GetComponent<TooltipTrigger>().AddTooltip(tooltipContent);
             }
-
+            choices[index].gameObject.SetActive(true);
+            choicesText[index].text = (index + 1) + ". " + choice.text;
             index++;
         }
         // Go through the remaining choices the UI supports and make sure they're hidden
