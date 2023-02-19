@@ -315,7 +315,7 @@ public class DialogueManager : MonoBehaviour
         foreach (Choice choice in currentChoices)
         {
             choices[index].gameObject.SetActive(true);
-            choicesText[index].text = choice.text;
+            choicesText[index].text = (index + 1) + ". " + choice.text;
             index++;
         }
         // Go through the remaining choices the UI supports and make sure they're hidden
@@ -336,7 +336,7 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        if (canContinueToNextLine)
+        if (canContinueToNextLine && choiceIndex + 1 <= currentStory.currentChoices.Count)
         {
             currentStory.ChooseChoiceIndex(choiceIndex);
             AddToLog("<color=#58180D>" + "> " + choicesText[choiceIndex].text + "</color>" + "\n"); // Add chosen choice to log
