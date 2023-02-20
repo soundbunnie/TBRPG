@@ -136,12 +136,19 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
+            string line = currentStory.Continue();
             if (displayLineCoroutine != null) // Stop coroutine if it already is playing
             {
                 StopCoroutine(displayLineCoroutine);
             }
+            if (string.IsNullOrWhiteSpace(line)) // Discard any empty lines
+            {
+                Debug.Log("Passed an empty line");
+                ContinueStory();
+                return;
+            }
             textAdvancePressed = false; // i dont really understand why it needs to be changed specifically here
-            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
+            displayLineCoroutine = StartCoroutine(DisplayLine(line));
         }
         else
         {
