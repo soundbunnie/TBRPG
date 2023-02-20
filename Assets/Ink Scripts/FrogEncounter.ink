@@ -1,11 +1,11 @@
 === encounterFrog ===
-You encounter a frog! #portraitText:Frog #portraitImg: frog_dude_neutral  #playMusic: menuToBattleMusic
+You encounter a frog! #playMusic: menuToBattleMusic
 He seems like a very good boy.
 -> encounterFrogActions
 
 === encounterFrogActions ===
 {set_default_stats()}
-What do you do? #portraitImg: frog_dude_neutral
+What do you do?
 // to do: the non-sticky stat checks disappear from the choices menu after they've been chosen. this is a little bit visually unappealing, find a way to keep the option there but unselectable and differently colored
 
 // idea: add a choice that has the same text as the non-sticky choices after selecting them and make them unselectable and colored via tags
@@ -15,7 +15,7 @@ What do you do? #portraitImg: frog_dude_neutral
             [PERCEPTION: SUCCESS] Your keen senses allow you to observe a few things about the frog: His height, title, the essence of his soul, and his name. #observations:* ~3.5 in tall.<br> * Seems to have a friendly disposition.<br> #portraitText: Mr. Frog #playSFX: stat_check_pass
         } 
         {not passed:
-            [PERCEPTION: FAILED] You feel as if he's on a completely different world than you. #observations: * Possibly an alien. #playSFX: stat_check_fail
+            [PERCEPTION: FAILED] You feel as if he's on a completely different world than you. #observations: * Possibly an alien.<br> #playSFX: stat_check_fail
         }
         -> encounterFrogActions
     * [DEXTERITY + INFLUENCE: HARD I want his friendship. I'll attempt to do a cool trick for him. #statCheck: DEX + INT] 
@@ -28,7 +28,7 @@ What do you do? #portraitImg: frog_dude_neutral
         }
         -> encounterFrogActions
     + [Pet him]
-        He's bursting with energy now! #portraitImg: frog_dude_happy #playSFX: yay #observations: * AKOFWPKP<br>
+        He's bursting with energy now!#playSFX: yay #observations: * PETTED<br>
         -> encounterFrogActions
     + [(next) Nothing] 
         All right then.

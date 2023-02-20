@@ -9,7 +9,7 @@ INCLUDE Globals\globals.ink
 SCENES
 */
 // Scene 1
-//INCLUDE Scenes\IntroScene.ink
+INCLUDE Scenes\IntroScene.ink
 //INCLUDE ChooseClass.ink
 
 // Scene 2

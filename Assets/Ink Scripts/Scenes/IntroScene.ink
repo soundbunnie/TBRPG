@@ -1,6 +1,6 @@
 -> forest_rathunt_scene
 === forest_rathunt_scene ===
-The forest is quiet. The dewey blades of grass dance to a silent tune, interrupted only by brief gusts of wind that flow around the trees. Aside from occassional chirps or footsteps made by nearby animals, the only sounds you hear are made by you.<br><br>Rays of light shine through the enormous trees that surround you, giving everything you see a sense of purity. Though you can't see much more than trees, shrubs and plants, all of the colours around you display such intensity, from the green shrubs to the bark of the trees - even the soil you walk upon seems vivid and rich. When you tilt your head upwards, you see fragments of the clear, blue sky through the thick leaves and manage to catch a few glimpses of some clouds passing by.
+The forest is quiet. The dewey blades of grass dance to a silent tune, interrupted only by brief gusts of wind that flow around the trees. Aside from occassional chirps or footsteps made by nearby animals, the only sounds you hear are made by you.<br><br>Rays of light shine through the enormous trees that surround you, giving everything you see a sense of purity. Though you can't see much more than trees, shrubs and plants, all of the colours around you display such intensity, from the green shrubs to the bark of the trees - even the soil you walk upon seems vivid and rich. When you tilt your head upwards, you see fragments of the clear, blue sky through the thick leaves and manage to catch a few glimpses of some clouds passing by. #playMusic: menuMusic
     * [There's something about this forest that is unsettling to me. I feel unsafe here.]-> forest_unsettling
     * [I take in the beauty all around me. It's peaceful.]->forest_beautiful
     * [This forest evokes no distinguishable feelings within me.]->forest_contd
@@ -18,7 +18,7 @@ You feel relaxed. Even though there are only a few sights and sounds, you feel a
     
 
 === into_rat_lair ===
--> DONE
+-> encounterFrog
 
 === stay_in_forest ===
--> DONE
+-> encounterFrog

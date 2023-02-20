@@ -8,6 +8,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Image))]
 public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler, IPointerExitHandler
 {
+    public bool TabInteractable = true;
+
     public TabGroup tabGroup;
 
     public Image background;
@@ -18,7 +20,10 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        tabGroup.OnTabSelected(this);
+        if (TabInteractable)
+        {
+            tabGroup.OnTabSelected(this);
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
