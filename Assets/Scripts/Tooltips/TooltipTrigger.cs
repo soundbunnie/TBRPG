@@ -20,10 +20,6 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     private void Awake()
     {
         #region Static Instance
-        if (instance != null)
-        {
-            Debug.LogWarning("Found more than one tooltip trigger in the scene.");
-        }
         instance = this;
         #endregion
     }
