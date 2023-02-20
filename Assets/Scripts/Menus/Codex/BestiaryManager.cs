@@ -33,12 +33,14 @@ public class BestiaryManager : MonoBehaviour
     }
     public void EnableEntry(string monsterId)
     {
+        Color textColor = new Color(88f/255f, 24f/255f, 13f/255f); // Divide each RGB value by 255 to fit within value from 0 to 1
         switch(monsterId)
         {
             case ("MrFrog"):
                 Entries[0].GetComponent<TabButton>().EnableTab();
                 entryText[0] = Entries[0].GetComponentInChildren<TextMeshProUGUI>(); // initialize corresponding text using index of that choice so they match
                 entryText[0].text = "Mr. Frog";
+                entryText[0].color = textColor;
                 break;
         }
     }
