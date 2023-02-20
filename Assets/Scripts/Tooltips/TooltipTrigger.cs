@@ -66,7 +66,11 @@ public class TooltipTrigger : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         {
             try
             {
-                LeanTween.cancel(delay.uniqueId); // Cancel the delay if there is one
+                LeanTween.cancel(delay.uniqueId); // Doesn't actually fix the bug :(
+            }
+            catch
+            {
+                Debug.Log("delay.uniqueId caused a null reference exception");
             }
             finally
             {
