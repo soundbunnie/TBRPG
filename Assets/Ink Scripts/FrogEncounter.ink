@@ -32,5 +32,5 @@ What do you do?
         -> encounterFrogActions
     + [(next) Nothing] 
         All right then.
-End of encounter. #playSFX: encounterWin
+End of encounter. #playSFX: encounterWin #enableBestiaryEntry: MrFrog
 -> DONE

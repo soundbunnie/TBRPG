@@ -18,6 +18,11 @@ public class TabButton : MonoBehaviour, IPointerEnterHandler, IPointerClickHandl
     public UnityEvent onTabSelected;
     public UnityEvent onTabDeselected;
 
+    public void EnableTab()
+    {
+        this.gameObject.GetComponent<TabButton>().TabInteractable = true;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (TabInteractable)

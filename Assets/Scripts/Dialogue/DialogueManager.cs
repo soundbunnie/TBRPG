@@ -39,6 +39,7 @@ public class DialogueManager : MonoBehaviour
     private const string POPUP_TAG = "popup";
     private const string OBSERVATION_TAG = "observations";
     private const string STATCHECK_TAG = "statCheck";
+    private const string ENABLE_BESTIARY_ENTRY = "enableBestiaryEntry";
     private const string PORTRAIT_TEXT = "portraitText";
     private const string PORTRAIT_IMG = "portraitImg";
     private const string MUSIC_TAG = "playMusic";
@@ -201,6 +202,9 @@ public class DialogueManager : MonoBehaviour
                 case STATCHECK_TAG:
                     tooltipContent = tagValue;
                     //Debug.Log(tagValue);
+                    break;
+                case ENABLE_BESTIARY_ENTRY:
+                    BestiaryManager.GetInstance().EnableEntry(tagValue);
                     break;
                 case MUSIC_TAG:
                     if (tagValue == "menuMusic")
