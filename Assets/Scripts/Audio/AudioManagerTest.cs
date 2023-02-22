@@ -34,12 +34,10 @@ public class AudioManagerTest : MonoBehaviour
     public void PlayMenuMusic()
     {
         AudioManager.Instance.PlayMusic(menuMusic);
-        AudioManager.Instance.SetMusicVolume(0.1f);
     }
     public void PlayBattleMusic()
     {
         AudioManager.Instance.PlayMusic(battleMusic);
-        AudioManager.Instance.SetMusicVolume(0.1f);
     }
     
     public void PlayPassSFX()

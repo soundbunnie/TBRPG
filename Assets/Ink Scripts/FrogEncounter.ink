@@ -1,5 +1,5 @@
 === encounterFrog ===
-You encounter a frog!
+You encounter a frog! #playMusic: mus_spider
 He seems like a very good boy.
 -> encounterFrogActions
 

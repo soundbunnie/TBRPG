@@ -13,9 +13,6 @@ INCLUDE Scenes\IntroScene.ink
 // Scene 2
 INCLUDE FrogEncounter.ink
 
-=== function playMusic(musicName) ===
-~ return
-
 // Scene 3
 //INCLUDE Test.ink
 

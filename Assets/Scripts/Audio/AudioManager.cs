@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 using System;
 
 public class AudioManager : MonoBehaviour
@@ -9,6 +11,9 @@ public class AudioManager : MonoBehaviour
     [Header("Fields")]
     [SerializeField] private List<AudioClip> musicClips;
     [SerializeField] private List<AudioClip> sfxClips;
+
+    [SerializeField] private Slider volumeSlider;
+    [SerializeField] private TMP_InputField sliderValue;
 
     private AudioSource musicSource;
     private AudioSource musicSource2; // for transitioning one song to another without having to cut one completely
@@ -55,11 +60,6 @@ public class AudioManager : MonoBehaviour
         musicSource2.loop = true;
     }
 
-    public static AudioManager GetInstance()
-    {
-        return instance;
-    }
-
     public void PlayMusic(AudioClip musicClip)
     {
         // Determine which source is active
@@ -72,31 +72,35 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusicByName(string musicName)
     {
+        var musicFound = false;
         foreach(AudioClip clip in musicClips)
         {
             if (clip.name == musicName)
             {
                 PlayMusic(clip);
+                musicFound = true;
             }
-            else
-            {
-                Debug.Log("Music" + clip.name + "not found");
-            }
+        }
+        if (!musicFound)
+        {
+            Debug.Log(musicName + " not found.");
         }
     }
 
     public void PlaySFXByName(string sfxName)
     {
+        var sfxFound = false;
         foreach (AudioClip clip in sfxClips)
         {
             if (clip.name == sfxName)
             {
                 PlaySFX(clip);
+                sfxFound = true;
             }
-            else
-            {
-                Debug.Log("SFX" + clip.name + " not found");
-            }
+        }
+        if (!sfxFound)
+        {
+            Debug.Log(sfxName + " not found");
         }
     }
 
@@ -188,10 +192,25 @@ public class AudioManager : MonoBehaviour
     }
 
     // Will be used to set volume in settings, among other things
-    public void SetMusicVolume(float volume)
+    public void OnInputSetMusicVolume()
     {
-        musicSource.volume = volume;
-        musicSource2.volume = volume;
+        float inputVolume = float.Parse(sliderValue.text, System.Globalization.NumberStyles.Float); // Convert text into float
+        musicSource.volume = inputVolume;
+        musicSource2.volume = inputVolume;
+
+        string valueStr = string.Format("{0:0.00}", musicSource.volume); // Format number to cut off after hundredths
+        sliderValue.text = valueStr;
+
+        volumeSlider.value = inputVolume; // Set the volume sliders value accordingly
+    }
+
+    public void OnSliderSetMusicVolume()
+    {
+        musicSource.volume = volumeSlider.value;
+        musicSource2.volume = volumeSlider.value;
+
+        string valueStr = string.Format("{0:0.00}", musicSource.volume); // Format number to cut off after hundredths
+        sliderValue.text = valueStr;
     }
 
     public void SetSFXVolume(float volume)
