@@ -12,8 +12,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private List<AudioClip> musicClips;
     [SerializeField] private List<AudioClip> sfxClips;
 
-    [SerializeField] private Slider volumeSlider;
-    [SerializeField] private TMP_InputField sliderValue;
+    [SerializeField] private Slider musicVolumeSlider;
+    [SerializeField] private TMP_InputField musicSliderValue;
+
+    [SerializeField] private Slider SFXVolumeSlider;
+    [SerializeField] private TMP_InputField SFXSliderValue;
 
     private AudioSource musicSource;
     private AudioSource musicSource2; // for transitioning one song to another without having to cut one completely
@@ -194,23 +197,42 @@ public class AudioManager : MonoBehaviour
     // Will be used to set volume in settings, among other things
     public void OnInputSetMusicVolume()
     {
-        float inputVolume = float.Parse(sliderValue.text, System.Globalization.NumberStyles.Float); // Convert text into float
+        float inputVolume = float.Parse(musicSliderValue.text, System.Globalization.NumberStyles.Float); // Convert text into float
         musicSource.volume = inputVolume;
         musicSource2.volume = inputVolume;
 
         string valueStr = string.Format("{0:0.00}", musicSource.volume); // Format number to cut off after hundredths
-        sliderValue.text = valueStr;
+        musicSliderValue.text = valueStr;
 
-        volumeSlider.value = inputVolume; // Set the volume sliders value accordingly
+        musicVolumeSlider.value = inputVolume; // Set the volume sliders value accordingly
     }
 
     public void OnSliderSetMusicVolume()
     {
-        musicSource.volume = volumeSlider.value;
-        musicSource2.volume = volumeSlider.value;
+        musicSource.volume = musicVolumeSlider.value;
+        musicSource2.volume = musicVolumeSlider.value;
 
         string valueStr = string.Format("{0:0.00}", musicSource.volume); // Format number to cut off after hundredths
-        sliderValue.text = valueStr;
+        musicSliderValue.text = valueStr;
+    }
+
+    public void OnInputSetSFXVolume()
+    {
+        float inputVolume = float.Parse(SFXSliderValue.text, System.Globalization.NumberStyles.Float); // Convert text into float
+        sfxSource.volume = inputVolume;
+
+        string valueStr = string.Format("{0:0.00}", sfxSource.volume); // Format number to cut off after hundredths
+        SFXSliderValue.text = valueStr;
+
+        SFXVolumeSlider.value = inputVolume; // Set the volume sliders value accordingly
+    }
+
+    public void OnSliderSetSFXVolume()
+    {
+        sfxSource.volume = SFXVolumeSlider.value;
+
+        string valueStr = string.Format("{0:0.00}", sfxSource.volume); // Format number to cut off after hundredths
+        SFXSliderValue.text = valueStr;
     }
 
     public void SetSFXVolume(float volume)
