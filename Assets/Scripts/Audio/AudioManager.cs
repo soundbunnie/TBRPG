@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
         AudioSource activeSource = (firstMusicSourceIsPlaying) ? musicSource : musicSource2; // ? = true : = false
 
         activeSource.clip = musicClip;
-        activeSource.volume = 0.1f;
+        //activeSource.volume = 0.1f;
         activeSource.Play();
     }
 
@@ -194,7 +194,7 @@ public class AudioManager : MonoBehaviour
         sfxSource.PlayOneShot(clip, volume);
     }
 
-    // Will be used to set volume in settings, among other things
+    // Set Music volume
     public void OnInputSetMusicVolume()
     {
         float inputVolume = float.Parse(musicSliderValue.text, System.Globalization.NumberStyles.Float); // Convert text into float
@@ -216,6 +216,7 @@ public class AudioManager : MonoBehaviour
         musicSliderValue.text = valueStr;
     }
 
+    // Set SFX volume
     public void OnInputSetSFXVolume()
     {
         float inputVolume = float.Parse(SFXSliderValue.text, System.Globalization.NumberStyles.Float); // Convert text into float
