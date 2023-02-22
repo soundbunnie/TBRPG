@@ -109,10 +109,10 @@ public class DialogueManager : MonoBehaviour
         // Initialize story from inkJSON
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
-        ContinueStory(); 
-
         // Check variables in the ink story file
         dialogueVariables.StartListening(currentStory);
+
+        ContinueStory(); 
     }
 
     private void ExitDialogueMode() // to test: unsure if this is necessary
@@ -120,6 +120,8 @@ public class DialogueManager : MonoBehaviour
         speechText.text = "";
         dialogueIsPlaying = false;
         dialogueVariables.StopListening(currentStory);
+
+        currentStory.UnbindExternalFunction("playMusic");
     }
 
     public void TextAdvance()
@@ -214,50 +216,54 @@ public class DialogueManager : MonoBehaviour
                     BestiaryManager.GetInstance().EnableEntry(tagValue);
                     break;
                 case MUSIC_TAG:
-                    if (tagValue == "menuMusic")
-                    {
-                        AudioManagerTest.GetInstance().PlayMenuMusic();
-                        break;
-                    }
-                    if (tagValue == "battleMusic")
-                    {
-                        AudioManagerTest.GetInstance().PlayBattleMusic();
-                        break;
-                    }
-                    if (tagValue == "menuToBattleMusic")
-                    {
-                        AudioManagerTest.GetInstance().TransitionMenuToBattleMusic();
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    AudioManager.Instance.PlayMusicByName(tagValue);
+                    break;
+                    //if (tagValue == "menuMusic")
+                    //{
+                    //    AudioManagerTest.GetInstance().PlayMenuMusic();
+                    //    break;
+                    //}
+                    //if (tagValue == "battleMusic")
+                    //{
+                    //    AudioManagerTest.GetInstance().PlayBattleMusic();
+                    //    break;
+                    //}
+                    //if (tagValue == "menuToBattleMusic")
+                    //{
+                    //    AudioManagerTest.GetInstance().TransitionMenuToBattleMusic();
+                    //    break;
+                    //}
+                    //else
+                    //{
+                    //    break;
+                    //}
                 case SFX_TAG:
-                    if (tagValue == "stat_check_pass")
-                    {
-                        AudioManagerTest.GetInstance().PlayPassSFX();
-                        break;
-                    }
-                    if (tagValue == "stat_check_fail")
-                    {
-                        AudioManagerTest.GetInstance().PlayFailSFX();
-                        break;
-                    }
-                    if (tagValue == "yay")
-                    {
-                        AudioManagerTest.GetInstance().playYaySFX();
-                        break;
-                    }
-                    if (tagValue == "encounterWin")
-                    {
-                        AudioManagerTest.GetInstance().WinEncounterSFX();
-                        break;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    AudioManager.Instance.PlaySFXByName(tagValue);
+                    break;
+                    //if (tagValue == "stat_check_pass")
+                    //{
+                    //    AudioManagerTest.GetInstance().PlayPassSFX();
+                    //    break;
+                    //}
+                    //if (tagValue == "stat_check_fail")
+                    //{
+                    //    AudioManagerTest.GetInstance().PlayFailSFX();
+                    //    break;
+                    //}
+                    //if (tagValue == "yay")
+                    //{
+                    //    AudioManagerTest.GetInstance().playYaySFX();
+                    //    break;
+                    //}
+                    //if (tagValue == "encounterWin")
+                    //{
+                    //    AudioManagerTest.GetInstance().WinEncounterSFX();
+                    //    break;
+                    //}
+                    //else
+                    //{
+                    //    break;
+                    //}
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
                     break;

@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class AudioManager : MonoBehaviour
 {
     #region Fields
     [Header("Fields")]
+    [SerializeField] private List<AudioClip> musicClips;
+    [SerializeField] private List<AudioClip> sfxClips;
+
     private AudioSource musicSource;
     private AudioSource musicSource2; // for transitioning one song to another without having to cut one completely
     private AudioSource sfxSource;
@@ -62,8 +66,38 @@ public class AudioManager : MonoBehaviour
         AudioSource activeSource = (firstMusicSourceIsPlaying) ? musicSource : musicSource2; // ? = true : = false
 
         activeSource.clip = musicClip;
-        activeSource.volume = 1;
+        activeSource.volume = 0.1f;
         activeSource.Play();
+    }
+
+    public void PlayMusicByName(string musicName)
+    {
+        foreach(AudioClip clip in musicClips)
+        {
+            if (clip.name == musicName)
+            {
+                PlayMusic(clip);
+            }
+            else
+            {
+                Debug.Log("Music" + clip.name + "not found");
+            }
+        }
+    }
+
+    public void PlaySFXByName(string sfxName)
+    {
+        foreach (AudioClip clip in sfxClips)
+        {
+            if (clip.name == sfxName)
+            {
+                PlaySFX(clip);
+            }
+            else
+            {
+                Debug.Log("SFX" + clip.name + " not found");
+            }
+        }
     }
 
     public void StopMusic()

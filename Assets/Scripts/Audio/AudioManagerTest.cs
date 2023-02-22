@@ -14,6 +14,7 @@ public class AudioManagerTest : MonoBehaviour
     [SerializeField] private AudioClip encounterWinSFX;
     [SerializeField] private AudioClip pageTurnSFX;
 
+
     private void Awake()
     {
         #region Static Instance
