@@ -2,7 +2,6 @@
 GLOABALS
 */
 INCLUDE Globals\globals.ink
-
 /* 
 SCENES
 */
