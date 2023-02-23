@@ -218,52 +218,9 @@ public class DialogueManager : MonoBehaviour
                 case MUSIC_TAG:
                     AudioManager.Instance.PlayMusicByName(tagValue);
                     break;
-                    //if (tagValue == "menuMusic")
-                    //{
-                    //    AudioManagerTest.GetInstance().PlayMenuMusic();
-                    //    break;
-                    //}
-                    //if (tagValue == "battleMusic")
-                    //{
-                    //    AudioManagerTest.GetInstance().PlayBattleMusic();
-                    //    break;
-                    //}
-                    //if (tagValue == "menuToBattleMusic")
-                    //{
-                    //    AudioManagerTest.GetInstance().TransitionMenuToBattleMusic();
-                    //    break;
-                    //}
-                    //else
-                    //{
-                    //    break;
-                    //}
                 case SFX_TAG:
                     AudioManager.Instance.PlaySFXByName(tagValue);
                     break;
-                    //if (tagValue == "stat_check_pass")
-                    //{
-                    //    AudioManagerTest.GetInstance().PlayPassSFX();
-                    //    break;
-                    //}
-                    //if (tagValue == "stat_check_fail")
-                    //{
-                    //    AudioManagerTest.GetInstance().PlayFailSFX();
-                    //    break;
-                    //}
-                    //if (tagValue == "yay")
-                    //{
-                    //    AudioManagerTest.GetInstance().playYaySFX();
-                    //    break;
-                    //}
-                    //if (tagValue == "encounterWin")
-                    //{
-                    //    AudioManagerTest.GetInstance().WinEncounterSFX();
-                    //    break;
-                    //}
-                    //else
-                    //{
-                    //    break;
-                    //}
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
                     break;
