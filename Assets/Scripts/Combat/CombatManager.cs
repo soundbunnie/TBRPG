@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using TMPro;
 
@@ -15,7 +16,7 @@ public class CombatManager : MonoBehaviour
     private TextMeshProUGUI[] enemyListText;
     private TextMeshProUGUI[] enemyHPText;
 
-    List<string> _turnOrder = new List<string>();
+    List<CreatureBase> _turnOrder = new List<CreatureBase>();
 
     public bool inCombat = false;
     #endregion
@@ -47,44 +48,35 @@ public class CombatManager : MonoBehaviour
     {
         inCombat = true;
         combatUI.SetActive(true);
-        DisplayEnemies();
-        EstablishTurnOrder();
+        // Add player to turn order
+        _turnOrder.Add(playerData);
+        AddEnemies();
+        SetTurnOrder();
     }
-    private void DisplayEnemies()
+    private void AddEnemies()
     {
         enemyListText = new TextMeshProUGUI[enemyList.Length];
         int index = 0;
         foreach (EnemyData enemy in enemyData)
         {
+            // Set enemy in the UI
             enemyList[index].gameObject.SetActive(true);
             enemyListText = enemyList[index].GetComponentsInChildren<TextMeshProUGUI>();
 
-            enemyListText[0].text = enemyData[index].enemyName;
+            enemyListText[0].text = enemyData[index].creatureName;
             enemyListText[1].text = enemyData[index].currentHealth.ToString();
 
+            // Add enemy to turn order
+            _turnOrder.Add(enemyData[index]);
             index++;
         }
     }
 
-    private void DoTurn()
+    private void SetTurnOrder()
     {
-        if (_turnOrder[0] == "Player")
-        {
-            actionMenu.SetActive(true);
-        }
-        else
-        {
-            actionMenu.SetActive(false);
-        }
-    }
-
-    private void EstablishTurnOrder()
-    {
-        if (playerData.speed > enemyData[0].speed)
-        {
-            _turnOrder.Add("Player");
-            _turnOrder.Add(enemyData[0].enemyName);
-        }
+        List<CreatureBase> sortedList = _turnOrder.OrderByDescending(creature => creature.speed).ToList(); // Sort turn order by creature speed
+        _turnOrder = sortedList;
+        Debug.Log(_turnOrder[0].creatureName + " " + _turnOrder[1].creatureName + " " + _turnOrder[2].creatureName);
     }
 
     public void PlayerAttack()
@@ -100,7 +92,7 @@ public class CombatManager : MonoBehaviour
         if (attackRoll > enemyData[enemyIndex].toHit)
         {
             enemyData[enemyIndex].currentHealth -= damageRoll;
-            DisplayEnemies();
+            AddEnemies();
         }
     }
 

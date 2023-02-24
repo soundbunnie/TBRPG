@@ -12462,6 +12462,7 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: e4c3097d3d9d1324baa9cded303c8574, type: 2}
   enemyData:
   - {fileID: 11400000, guid: 7c30e9a4ae7ab024db6f285c84814ff4, type: 2}
+  - {fileID: 11400000, guid: 990f9319c574ec9489c9859e685ae4a6, type: 2}
   inCombat: 0
 --- !u!1 &605162320
 GameObject:

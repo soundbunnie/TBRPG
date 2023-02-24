@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1d0ef48d6855bd47a457e4e71c23eff, type: 3}
   m_Name: Mr Frog
   m_EditorClassIdentifier: 
-  enemyName: Mr Frog
-  attackStat: Strength
+  creatureName: Mr Frog
   maxHealth: 30
   currentHealth: 30
+  attackStat: Strength
   toHit: 1
   strength: 1
   dexterity: 0
@@ -23,4 +23,4 @@ MonoBehaviour:
   intelligence: 0
   influence: 0
   awareness: 0
-  speed: 10
+  speed: 9

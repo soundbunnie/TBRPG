@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a047f36e49f68b649b73c85505d5f783, type: 3}
-  m_Name: Player Data
+  m_Script: {fileID: 11500000, guid: e1d0ef48d6855bd47a457e4e71c23eff, type: 3}
+  m_Name: Test
   m_EditorClassIdentifier: 
-  creatureName: Player
+  creatureName: Test Creature
   maxHealth: 100
   currentHealth: 100
   attackStat: Strength
-  toHit: 5
-  strength: 3
-  dexterity: 2
-  willpower: 1
-  intelligence: 1
-  influence: 1
-  awareness: 2
-  speed: 10
+  toHit: 100
+  strength: 100
+  dexterity: 100
+  willpower: 100
+  intelligence: 100
+  influence: 100
+  awareness: 100
+  speed: 1000
