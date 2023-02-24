@@ -1,7 +1,7 @@
 /*
 GLOABALS
 */
-INCLUDE Globals\globals.ink
+INCLUDE globals.ink
 /* 
 SCENES
 */
@@ -10,7 +10,7 @@ INCLUDE Scenes\IntroScene.ink
 //INCLUDE ChooseClass.ink
 
 // Scene 2
-INCLUDE FrogEncounter.ink
+INCLUDE Scenes\FrogEncounter.ink
 
 // Scene 3
 //INCLUDE Test.ink

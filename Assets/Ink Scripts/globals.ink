@@ -4,4 +4,5 @@ VAR player_class = "" // to be handled elsewhere
 /*
 SYSTEM
 */
-INCLUDE Globals\Parameters\Player\stats.ink
+INCLUDE global_functions.ink
+INCLUDE global_variables.ink
