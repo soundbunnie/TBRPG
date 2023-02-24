@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EnemyData", menuName = "Enemy/Enemy")]
-public class EnemyData : ScriptableObject
+public class EnemyData : EnemyBase
 {
     public string enemyName;
     public string attackStat;
@@ -17,4 +17,9 @@ public class EnemyData : ScriptableObject
     public int influence;
     public int awareness;
     public int speed;
+
+    public override void DoTurn()
+    {
+        
+    }
 }

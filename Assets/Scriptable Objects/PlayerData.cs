@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Character Stats", menuName = "Parameters/Character Stats")]
-public class Stats : ScriptableObject
+[CreateAssetMenu(fileName = "Player Data", menuName = "Player/Player Data")]
+public class PlayerData : PlayerBase
 {
     public int maxHealth;
     public int currentHealth;
@@ -16,4 +16,9 @@ public class Stats : ScriptableObject
     public int influence;
     public int awareness;
     public int speed;
+
+    public override void DoTurn()
+    {
+        // Do turn
+    }
 }

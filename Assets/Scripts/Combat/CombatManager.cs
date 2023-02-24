@@ -10,7 +10,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] GameObject actionMenu;
     [SerializeField] GameObject[] enemyList;
 
-    public Stats _playerStats;
+    public PlayerData playerData;
     public EnemyData[] enemyData;
     private TextMeshProUGUI[] enemyListText;
     private TextMeshProUGUI[] enemyHPText;
@@ -80,7 +80,7 @@ public class CombatManager : MonoBehaviour
 
     private void EstablishTurnOrder()
     {
-        if (_playerStats.speed > enemyData[0].speed)
+        if (playerData.speed > enemyData[0].speed)
         {
             _turnOrder.Add("Player");
             _turnOrder.Add(enemyData[0].enemyName);

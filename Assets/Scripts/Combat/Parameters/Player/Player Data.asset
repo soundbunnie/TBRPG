@@ -9,17 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20fa1d11e6525bb43ba23684997f045c, type: 3}
-  m_Name: Stats
+  m_Script: {fileID: 11500000, guid: a047f36e49f68b649b73c85505d5f783, type: 3}
+  m_Name: Player Data
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
-  attackStat: Strength
-  toHit: 3
-  strength: 3
-  dexterity: 2
-  willpower: 1
-  intelligence: 1
-  influence: 1
-  awareness: 2
-  speed: 20
+  maxHealth: 0
+  currentHealth: 0
+  attackStat: 
+  toHit: 0
+  strength: 0
+  dexterity: 0
+  willpower: 0
+  intelligence: 0
+  influence: 0
+  awareness: 0
+  speed: 0
