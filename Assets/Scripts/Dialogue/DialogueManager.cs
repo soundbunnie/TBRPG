@@ -44,6 +44,7 @@ public class DialogueManager : MonoBehaviour
     private const string PORTRAIT_IMG = "portraitImg";
     private const string MUSIC_TAG = "playMusic";
     private const string SFX_TAG = "playSFX";
+    private const string START_COMBAT = "startCombat";
 
     private Story currentStory;
 
@@ -220,6 +221,9 @@ public class DialogueManager : MonoBehaviour
                     break;
                 case SFX_TAG:
                     AudioManager.Instance.PlaySFXByName(tagValue);
+                    break;
+                case START_COMBAT:
+                    CombatManager.Instance.StartCombat();
                     break;
                 default:
                     Debug.LogWarning("Tag came in but is not currently being handled: " + tag);

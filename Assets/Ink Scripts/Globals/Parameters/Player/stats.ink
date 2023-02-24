@@ -55,5 +55,3 @@ VAR Awareness = 1
 ~ Influence = RANDOM(1, 6)
 ~ Awareness = RANDOM(1, 6)
 
- 6)
-
