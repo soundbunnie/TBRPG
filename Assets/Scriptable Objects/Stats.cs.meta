@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 98103144995fb4347b6113a05fb2863f
+guid: 20fa1d11e6525bb43ba23684997f045c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - combatUI: {instanceID: 0}
-  - _stats: {fileID: 11400000, guid: 5de9ffdae2eca6e4193332c7200c5af6, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
