@@ -6,7 +6,7 @@ Dexterity // A higher dexterity means that you move better, more precisely, and 
 Willpower // Your ability to persevere. A higher willpower means that you will be able to withstand pain, fear, emotions, etc...
 Intelligence // Your ability to reason, understand, and make connections.
 Influence // Your ability to influence others, be it by strength, deception, charm, etc...
-Perception // This influences your reaction time and your observation skills. Someone with a high perception will notice things that others do not.
+Awareness // This influences your reaction time and your observation skills. Someone with a high Awareness will notice things that others do not.
 
 each stats dice will increase as you put points into it (6, 8, 10, 12)
 there can be temporary stat dice increases
@@ -20,7 +20,7 @@ VAR Dexterity = 1
 VAR Willpower = 1
 VAR Intellignece = 1
 VAR Influence = 1
-VAR Perception = 1
+VAR Awareness = 1
 
 
 === function set_default_stats() ===
@@ -29,7 +29,7 @@ VAR Perception = 1
 ~ Willpower = RANDOM(1, 6)
 ~ Intellignece = RANDOM(1, 6)
 ~ Influence = RANDOM(1, 6)
-~ Perception = RANDOM(1, 6)
+~ Awareness = RANDOM(1, 6)
 
 === function set_warrior_stats() ===
 ~ Strength = RANDOM(1, 6)
@@ -37,7 +37,7 @@ VAR Perception = 1
 ~ Willpower = RANDOM(1, 6)
 ~ Intellignece = RANDOM(1, 6)
 ~ Influence = RANDOM(1, 6)
-~ Perception = RANDOM(1, 6)
+~ Awareness = RANDOM(1, 6)
 
 === function set_thief_stats() ===
 ~ Strength = RANDOM(1, 6)
@@ -45,7 +45,7 @@ VAR Perception = 1
 ~ Willpower = RANDOM(1, 6)
 ~ Intellignece = RANDOM(1, 6)
 ~ Influence = RANDOM(1, 6)
-~ Perception = RANDOM(1, 6)
+~ Awareness = RANDOM(1, 6)
 
 === function set_alchemist_stats===
 ~ Strength = RANDOM(1, 6)
@@ -53,5 +53,7 @@ VAR Perception = 1
 ~ Willpower = RANDOM(1, 6)
 ~ Intellignece = RANDOM(1, 6)
 ~ Influence = RANDOM(1, 6)
-~ Perception = RANDOM(1, 6)
+~ Awareness = RANDOM(1, 6)
+
+ 6)
 
