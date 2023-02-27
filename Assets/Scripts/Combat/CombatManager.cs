@@ -19,6 +19,14 @@ public class CombatManager : MonoBehaviour
     List<CreatureBase> _turnOrder = new List<CreatureBase>();
 
     public bool inCombat = false;
+
+    private CombatState _currentState;
+
+    public void SetState(CombatState state)
+    {
+        _currentState = state;
+        StartCoroutine(_currentState.Start());
+    }
     #endregion
 
     #region Static instance
@@ -77,7 +85,11 @@ public class CombatManager : MonoBehaviour
         List<CreatureBase> sortedList = _turnOrder.OrderByDescending(creature => creature.speed).ToList(); // Sort turn order by creature speed
         _turnOrder = sortedList;
         Debug.Log(_turnOrder[0].creatureName + " " + _turnOrder[1].creatureName + " " + _turnOrder[2].creatureName);
+
+        StartCoroutine(_currentState.HandleTurnOrder());
     }
+
+    /*
 
     public void PlayerAttack()
     {
@@ -107,4 +119,5 @@ public class CombatManager : MonoBehaviour
             index++;
         }
     }
+    */
 }
